@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
-export var speed = Vector2(150.0, 150.0)
+export var speed = Vector2(300.0, 450.0)
 export var acel_down = 400
-export var str_jump = 3000
-export var str_bounce = 350
+export var str_jump = 3500
+export var str_bounce = 300
+export var impulse = -4500
 
 var move = Vector2.ZERO
 
@@ -36,7 +37,7 @@ func down():
 	if not is_on_floor():
 		animation.play("jump")
 		move.y += acel_down
-		move.y = clamp(move.y, -str_jump, speed.y)
+		move.y = clamp(move.y, impulse, speed.y)
 		
 func jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -48,15 +49,18 @@ func jump():
 func crash_roof():
 	if is_on_ceiling():
 		move.y = str_bounce
-	
+
+
 func fall_down():
 	if position.y > camera.limit_bottom:
 		respawn()
-		
+
+func impulse():
+	move.y = impulse
 
 func respawn():
 	get_tree().reload_current_scene()
-		
+
 
 func _on_level1_ready():
 	pass # Replace with function body.
