@@ -1,0 +1,1916 @@
+CAPITULO 1 - FUNDAMENTOS
+
+Dirección:
+Norte = Arriba
+Sur = Abajo
+Este = Derecha
+Oeste = Izquierda
+
+Acciones = Mover, Poner, Sacar
+
+Colores = Rojo, Azul, Negro, Verde
+
+Todo programa tiene exactamente un program: una sección del código que declara los comandos (acciones) que queremos que la máquina realice sobre el tablero inicial. Al ejecutar un programa obtendremos un tablero final.
+La sintaxis de un program es bastante simple:
+1. escribimos una línea (renglón) que diga program, seguido de una llave de apertura: {
+2. a continuación, los comandos: uno por línea
+3. y finalmente, una última llave que cierra la que abrimos anteriormente }
+
+Cuando trabajamos en Gobstones, hacemos las cosas en un cierto orden. Por ejemplo, si tenemos este programa:
+program {
+  Mover(Norte)
+  Mover(Este)
+}
+una forma posible de leerlo (llamada operacional) es como lo haría una máquina, en orden, de arriba hacia abajo:
+1. primero se mueve al norte: Mover(Norte)
+2. luego se mueve al este: Mover(Este)
+
+
+
+PRIMEROS PROGRAMAS
+
+
+Ejercicio 4.
+program {
+  Mover(Norte)
+}
+
+
+Ejercicio 5.
+program {
+  Mover(Norte)
+  Mover(Norte)
+  Mover(Norte)
+}
+
+
+Ejercicio 6.
+program {
+  Mover(Este)
+  Mover(Este)
+  Mover(Sur)
+}
+
+
+Ejercicio 7.
+program {
+  Mover(Este)
+  Mover(Norte)
+}
+
+
+Ejercicio 8.
+program {
+  Mover(Sur)
+}
+
+
+Ejercicio 9.
+program {
+  Poner(Rojo)    
+}
+
+
+Ejercicio 10.
+program {
+  Poner(Rojo)
+  Poner(Rojo)
+  Poner(Azul)
+  Poner(Verde)
+  Poner(Rojo)
+}
+
+
+Ejercicio 11.
+program {
+  Poner(Rojo)
+  Poner(Rojo)
+  Poner(Rojo)
+  Poner(Rojo)
+  Poner(Negro)
+  Poner(Negro)
+  Poner(Negro)
+}
+
+
+Ejercicio 12.
+program {
+  Mover(Sur)
+  Sacar(Rojo)
+}
+
+
+Ejercicio 13.
+program {
+  Sacar(Verde)
+}
+
+
+Ejercicio 14.
+program {
+  Sacar(Azul)
+  Sacar(Negro)
+  Sacar(Rojo)
+  Sacar(Verde)
+}
+
+
+
+*******************************************************************************************************
+
+
+
+PRACTICA PRIMEROS PROGRAMAS
+
+
+Ejercicio 1.
+program {
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Negro)
+}
+
+
+Ejercicio 2.
+program {
+  Poner(Rojo)
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+  Poner(Rojo)
+}
+
+
+Ejercicio 3.
+program {
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+}
+
+
+Ejercicio 4.
+program {
+  Poner(Azul)
+  Mover(Norte)
+  Poner(Azul)
+  Mover(Norte)
+  Poner(Azul)
+  Mover(Este)
+  Mover(Sur)
+  Poner(Azul)
+  Mover(Sur)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+}
+
+
+Ejercicio 5.
+program {
+  Poner(Verde)
+  Mover(Norte)
+  Poner(Verde)
+  Mover(Este)
+  Poner(Rojo)
+  Mover(Sur)
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+  Mover(Norte)
+  Poner(Rojo)
+}
+
+
+Ejercicio 6.
+program {
+  Poner(Azul)
+  Mover(Norte)
+  Mover(Norte)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Sur)
+  Poner(Rojo)
+  Mover(Norte)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Sur)
+  Mover(Sur)
+  Poner(Azul)
+  Mover(Oeste)
+  Poner(Azul)
+  Mover(Oeste)
+  Poner(Azul)
+  Mover(Oeste)
+  Poner(Azul)
+}
+
+
+Ejercicio 7.
+program {
+  Sacar(Verde)
+  Mover(Norte)
+  Sacar(Verde)
+  Mover(Norte)
+  Sacar(Verde)
+  Mover(Este)
+  Sacar(Verde)
+  Mover(Este)
+  Sacar(Verde)
+  Mover(Sur)
+  Sacar(Verde)
+  Mover(Sur)
+  Sacar(Verde)
+  Mover(Oeste)
+  Sacar(Verde)
+  Mover(Oeste)
+}
+
+
+Ejercicio 8.
+program {
+  Sacar(Rojo)
+  Poner(Verde)
+  Mover(Norte)
+  Sacar(Rojo)
+  Poner(Verde)
+  Mover(Este)
+  Sacar(Rojo)
+  Poner(Verde)
+  Mover(Sur)
+  Sacar(Rojo)
+  Poner(Verde)
+  Mover(Oeste)
+}
+
+
+
+*******************************************************************************************************
+
+
+
+Acciones:
+IrAlBorde(direccion) = toma una dirección, y se mueve todo lo que pueda en esa dirección,
+hasta llegar al borde.
+
+
+
+PROCEDIMIENTOS
+
+
+Ejercicio 1.
+Dibuja un cuadrado de bolitas negras
+
+
+Ejercicio 4.
+procedure Poner3Rojas() {
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+}
+
+program {
+    Poner3Rojas()
+}
+
+
+Ejercicio 5.
+procedure PonerNegroYRojo() {
+	Poner(Negro)
+	Poner(Rojo)
+}
+program {
+    PonerNegroYRojo()
+}
+
+
+
+Los Procedimientos también tenemos reglas:
+1. empezamos con la palabra reservada procedure;
+2. elegimos un nombre que lo describa y lo escribimos con la primera letra 
+de cada palabra en mayúscula;
+3. a continuación colocamos paréntesis ();
+4. encerramos las acciones que queremos que haga entre llaves {}.
+
+
+
+Ejercicio 6.
+procedure Poner3Verdes(){
+  Poner(Verde)
+  Poner(Verde)
+  Poner(Verde)
+}
+program {
+  Poner3Verdes()
+}
+
+
+Ejercicio 7.
+program {
+  Poner3Verdes()
+  Mover(Este)
+  Poner3Verdes()
+}
+
+
+Ejercicio 8.
+program {
+  Poner3Rojas()
+  Poner3Rojas()
+  Poner3Rojas()
+}
+
+
+Ejercicio 9.
+procedure Poner9Rojas() {
+  Poner3Rojas()
+  Poner3Rojas()
+  Poner3Rojas()
+}
+program {
+  Poner9Rojas()
+}
+
+
+Ejercicio 10.
+procedure DibujarPuntaNegra() {
+  Poner(Negro)
+  Mover(Norte)
+  Poner(Negro)
+  Mover(Sur)
+  Mover(Este)
+  Poner(Negro) 
+}
+program {
+  DibujarPuntaNegra()
+}
+
+
+Ejercicio 11.
+procedure DibujarDosPuntas() {
+  DibujarPuntaNegra()
+  Mover(Norte)
+  Mover(Norte)
+  Mover(Este)
+  DibujarPuntaNegra()
+}
+program {
+  DibujarDosPuntas()
+}
+
+
+Ejercicio 12.
+procedure RojoAlBorde(){
+  IrAlBorde(Norte)
+  IrAlBorde(Oeste)
+  Poner(Rojo)
+}
+program {
+  RojoAlBorde()
+}
+
+
+Ejercicio 13.
+procedure PonerGuirnalda(){
+  Poner3Verdes()
+  Poner3Rojas()
+}
+procedure DecorarTablero(){
+  IrAlBorde(Norte)
+  IrAlBorde(Oeste)
+  PonerGuirnalda()
+  IrAlBorde(Este)
+  PonerGuirnalda()  
+}
+program {
+  DecorarTablero()
+}
+
+
+Ejercicio 14.
+procedure Poner4Color(){
+  Poner(Verde)
+  Poner(Rojo)
+  Poner(Azul)
+  Poner(Negro)
+}
+procedure DibujarLineaColorida(){
+  Poner4Color()
+  Mover(Este)
+  Poner4Color()
+  Mover(Este)
+  Poner4Color()
+  Mover(Este)
+  Poner4Color()
+  IrAlBorde(Oeste)
+}
+program {
+  DibujarLineaColorida()
+}
+
+
+Ejercicio 15.
+procedure DibujarCuadradoColorido() {
+  DibujarLineaColorida()
+  Mover(Norte)
+  DibujarLineaColorida()
+  Mover(Norte)
+  DibujarLineaColorida()
+  Mover(Norte)
+  DibujarLineaColorida()
+  IrAlBorde(Sur)
+}
+program {
+  DibujarCuadradoColorido()
+}
+
+
+
+*******************************************************************************************************
+
+
+
+Acciones:
+repeat(cantidad){} = repite la cantidad de acciones que queramos hacer, 
+las veces que indiquemos en cantidad
+
+
+
+REPETICION SIMPLE
+
+
+Ejercicio 1.
+procedure MoverOeste10(){
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+}
+
+
+Ejercicio 2.
+procedure MoverOeste10() {
+  repeat(10) {
+    Mover(Oeste)
+  }
+}
+
+
+Ejercicio 3.
+procedure MoverOeste5() {
+  repeat(5) {
+    Mover(Oeste)
+  }
+}
+
+
+Ejercicio 4.
+procedure Poner3AlNoreste(){
+  Mover(Este)
+  Mover(Norte)
+  repeat(3) {
+    Poner(Negro)
+}
+}
+
+
+Ejercicio 5.
+procedure PonerAzulLejos(){
+  repeat(4) {
+    Mover(Este)
+  }
+  Poner(Azul)
+}
+
+
+Ejercicio 6.
+procedure DibujarLineaNegra6() {
+  repeat(6) {
+    Poner(Negro)
+    Mover(Este)
+  }
+}
+
+
+Ejercicio 7.
+procedure LineaRoja4() {
+  repeat(4) {
+    Poner(Rojo)
+    Mover(Norte)
+  }
+}
+
+
+Ejercicio 8.
+procedure Diagonal4Azul() {
+  repeat(4) {
+    Poner(Azul)
+    Mover(Norte)
+    Mover(Este)
+  }
+}
+
+
+Ejercicio 9.
+procedure Poner21Azul(){
+  repeat(21){
+      Poner(Azul)
+    }
+}
+procedure DiagonalPesada4Azul(){
+  repeat(4) {
+    Poner21Azul()
+    Mover(Norte)
+    Mover(Este)
+  }
+}
+
+
+Ejercicio 10.
+procedure LineaNegra4Este() {
+  repeat(3) {
+    Poner(Negro)
+    Mover(Este)
+  }
+  Poner(Negro)
+}
+
+
+Ejercicio 11.
+procedure Volver(){
+  repeat(3) {
+    Mover(Oeste)
+  }
+  Mover(Norte)
+}
+procedure CuadradoNegro4(){
+  repeat(3){
+    LineaNegra4Este()
+    Volver()
+  }
+  LineaNegra4Este()
+}
+
+
+
+*******************************************************************************************************
+
+
+
+PARAMETROS
+
+
+Ejercicio 1.
+procedure DibujarLineaNegra3(){
+  Poner(Negro)
+  repeat(2){
+    Mover(Este)
+    Poner(Negro)
+  }
+  VolverAtras()
+}
+program {
+  DibujarLineaNegra3()
+}
+
+
+Ejercicio 2.
+procedure DibujarCuadradoNegroDeLado3(){
+  DibujarLineaNegra3()
+  repeat(2){
+    Mover(Norte)
+    DibujarLineaNegra3()
+  }
+}
+program {
+  DibujarCuadradoNegroDeLado3()
+}
+
+
+Ejercicio 3.
+procedure DibujarLineaVerde3(){
+  Poner(Verde)
+  repeat(2) {
+    Mover(Este)
+    Poner(Verde)
+    }
+  VolverAtras()
+}
+program {
+  DibujarLineaVerde3()
+}
+
+
+Ejercicio 4.
+procedure DibujarLineaRoja3(){
+  Poner(Rojo)
+  repeat(2) {
+    Mover(Este)
+    Poner(Rojo)
+    }
+  VolverAtras()
+}
+procedure DibujarLineaAzul3(){
+  Poner(Azul)
+  repeat(2) {
+    Mover(Este)
+    Poner(Azul)
+    }
+  VolverAtras()
+}
+
+
+Ejercicio 5.
+procedure Poner3(color) {
+  repeat(3) {
+    Poner(color)
+  }
+}
+program {
+  Poner3(Negro)
+  Poner3(Rojo)
+}
+
+
+Ejercicio 6.
+program {
+  Poner3(Verde)
+}
+
+
+Ejercicio 7.
+procedure DibujarLinea3(color) {
+  repeat(2) {
+    Poner(color)
+    Mover(Este)
+  }
+  Poner(color)
+  VolverAtras()
+}
+
+
+Ejercicio 8.
+procedure DibujarCuadradoDeLado3(color){
+  DibujarLinea3(color)
+  repeat(2){
+    Mover(Norte)
+    DibujarLinea3(color)
+  }
+}
+
+
+Ejercicio 9.
+program {
+  DibujarLinea3(Verde, Este)
+  Mover(Este)
+  DibujarLinea3(Rojo, Norte)
+  Mover(Norte)
+  DibujarLinea3(Negro, Oeste)
+  Mover(Oeste)
+  DibujarLinea3(Azul, Sur)
+}
+
+
+Ejercicio 10.
+program{
+  DibujarLinea3(Norte, Azul)
+}
+
+
+Ejercicio 11.
+program{
+  DibujarLinea3(Azul)
+}
+
+Ejercicio 12.
+procedure Triada(color1, color2, color3){
+  Poner(color1)
+  Mover(Este)
+  Poner(color2)
+  Mover(Este)
+  Poner(color3)
+}
+
+
+
+*******************************************************************************************************
+
+
+
+Acciones:
+PonerN(cantidad,color) = pone el número de bolitas que indica en cantidad,
+y el color que se aclara en "color"
+MoverN(cantidad,direccion) = se mueve el número de veces que indica en cantidad,
+y en la direccion que establece "direccion"
+
+
+
+PRACTICA REPETICION SIMPLE
+
+
+Ejercicio 1.
+procedure Diagonal4AzulVolviendo(){
+  Diagonal4Azul()
+   repeat(4){
+        Mover(Sur)
+        Mover(Oeste)
+     }
+}
+
+
+Ejercicio 2.
+procedure BandaDiagonal4(){
+  Diagonal4AzulVolviendo()
+  repeat(2){
+    Mover(Norte)
+    Diagonal4AzulVolviendo()
+  }
+  Mover(Sur)
+  Mover(Sur)
+}
+
+
+Ejercicio 3.
+procedure PonerN(cantidad, color){
+  repeat(cantidad){
+    Poner(color)
+  }
+}
+
+
+Ejercicio 4.
+procedure DiaDeLaMemoria(){
+  PonerN(24,Azul)
+  Mover(Este)
+  PonerN(3,Verde)
+  Mover(Este)
+  PonerN(1976,Negro)
+}
+
+
+Ejercicio 5.
+procedure Fecha(dia, mes, anio){
+  PonerN(dia, Azul)
+  Mover(Este)
+  PonerN(mes, Verde)
+  Mover(Este)
+  PonerN(anio, Negro)
+} 
+
+
+Ejercicio 6.
+procedure MoverN(cantidad, direccion){
+  repeat(cantidad){
+    Mover(direccion)
+  }
+}
+
+
+Ejercicio 7.
+procedure DibujarReloj(radio){
+  MoverN(radio,Norte)
+  PonerN(12,Rojo)
+  MoverN(radio,Sur)
+  MoverN(radio,Este)
+  PonerN(3,Rojo)
+  MoverN(radio,Oeste)
+  MoverN(radio,Sur)
+  PonerN(6,Rojo)
+  MoverN(radio,Norte)
+  MoverN(radio,Oeste)
+  PonerN(9,Rojo)
+  MoverN(radio,Este)
+}
+
+
+Ejercicio 8.
+procedure LineaEstePesada(peso, color, longitud){
+  repeat(longitud){
+    PonerN(peso,color)
+    Mover(Este)
+    }
+  MoverN(longitud,Oeste)
+}
+
+
+Ejercicio 9.
+procedure Guarda3Color(){
+  Poner(Verde)
+  PonerN(5,Negro)
+  PonerN(9,Rojo)
+}
+procedure GuardaDe5(){
+  repeat(4){
+    Guarda3Color()
+    Mover(Este)
+  }
+  Guarda3Color()
+}
+
+
+Ejercicio 10.
+procedure PonerArribayVolver(){
+  PonerAzulejo()
+  repeat(2){
+    Mover(Norte)
+    PonerAzulejo()
+  }
+  MoverN(2,Sur)
+}
+procedure PonerAbajoyVolver(){
+  repeat(2){
+    Mover(Este)
+    PonerAzulejo()
+  }
+  MoverN(2,Oeste)
+}
+procedure GuardaEnL(){
+  PonerArribayVolver()
+  PonerAbajoyVolver()
+}
+
+
+
+*******************************************************************************************************
+
+
+
+Acciones:
+div = division 
+opuesto(direccion) = mueve en la direccion opuesta a la especificada en direccion.
+siguiente(direccion) = mueve en la dirección siguiente a la especificada.
+previo(direccion) = mueve en la anterior, siempre pensándolo en el sentido de las agujas del reloj.
+		NORTE
+	previo	siguiente
+OESTE				ESTE
+
+		 SUR
+nroBolitas(color) = retorna la cantidad de bolitas de un color determinado en la posición actual.
+SacarN(cantidad,color) = saca el número de bolitas que indica en cantidad,
+y el color que se aclara en "color"
+
+
+
+EXPRESIONES
+
+
+Ejercicio 1.
+program {
+  PonerN(3+2,Negro)
+}
+
+
+Ejercicio 2.
+procedure PonerSuma(x, y){
+  PonerN(x+y,Rojo)
+}
+
+
+Ejercicio 3.
+procedure ContarGente(micros, autos, bicicletas){
+  PonerN(micros*40+autos*4+bicicletas, Verde)
+}
+
+Ejercicio 4.
+procedure MoverComoSalmon(direccion) {
+  Mover(opuesto(direccion))
+}
+
+
+Ejercicio 5.
+procedure CaminarDesconfiado(pasos){
+  MoverN(pasos div 2, Este)
+}
+
+
+Ejercicio 6.
+procedure PonerAl(direccion, color){
+  Mover(direccion)
+  Poner(color)
+  Mover(opuesto(direccion))
+}
+
+
+Ejercicio 7.
+procedure Linea(direccion, color, longitud) {
+  repeat(longitud) {
+    Poner(color)
+    Mover(direccion)
+  }
+  MoverN(longitud,opuesto(direccion))
+}
+
+
+Ejercicio 8.
+procedure Ele(direccion){
+  Linea(direccion, Azul, 3)
+  Linea(siguiente(direccion), Azul, 3)
+}
+
+
+Ejercicio 9.
+opcion 4 = 1 columna, 2 fila
+
+
+Ejercicio 10.
+procedure Flecha(direccion){
+  Mover(direccion)
+  Poner(Rojo)
+  Mover(opuesto(direccion))
+  Mover(siguiente(direccion))
+  Poner(Rojo)
+  Mover(previo(direccion))
+  Mover(previo(direccion))
+  Poner(Rojo)
+  Mover(siguiente(direccion))
+}
+
+
+Ejercicio 11.
+procedure CopiarVerdesEnRojas(){
+  PonerN(nroBolitas(Verde),Rojo)
+}
+
+
+Ejercicio 12.
+procedure SacarTodas(color){
+  SacarN(nroBolitas(color), color)
+}
+
+
+
+
+*******************************************************************************************************
+
+
+
+Condicional;
+if (condicion){} = si es verdadera la condición establecida realiza una acción,
+sino no hace nada.
+else = si no se cumple la condición if, "entonces" se ejecuta el else.
+< para el menor.
+> para el mayor.
+
+Acciones:
+hayBolitas(color) = recibe un color y retorna True o False. (Verdadero o Falso)
+puedeMover(direccion) = sirve para saber si el cabezal puede moverse en una cierta dirección.
+not(condicion) = niega cualquier condición
+
+
+
+ALTERNATIVA CONDICIONAL
+
+
+Ejercicio 1.
+procedure SacarAzulConMiedo() {
+  Sacar(Azul)
+}
+
+
+Ejercicio 2.
+procedure SacarAzulConMiedo() {
+  if (hayBolitas(Azul)) {
+    Sacar(Azul)
+  } 
+}
+
+
+Ejercicio 3.
+procedure SacarRojoConMiedo() {
+  if (hayBolitas(Rojo)) {
+    Sacar(Rojo)
+  } 
+}
+
+
+Ejercicio 4.
+procedure CompletarCelda(){
+  if (hayBolitas(Negro)){
+    Poner(Rojo)
+    Poner(Verde)
+    Poner(Azul)
+  }
+}
+
+
+Ejercicio 5.
+program {
+  if (puedeMover(Este)){
+    Mover(Este)
+  }
+}
+
+
+Ejercicio 6.
+program {
+  if (nroBolitas(Negro) < 5 ){
+    Poner(Negro)
+  }
+}
+
+
+Ejercicio 7.
+procedure AsegurarUnaBolitaVerde(){
+  if (not(hayBolitas(Verde))){
+    Poner(Verde)
+  }
+}
+
+
+Ejercicio 8.
+procedure MoverComoSea() {
+    if (puedeMover(Oeste)) {
+        Mover(Oeste)
+    } else {
+        Mover(Norte)
+    }
+}
+
+
+Ejercicio 9.
+procedure PrenderOApagarLuz(){
+  if (hayBolitas(Verde)){
+    Poner(Negro)
+    Sacar(Verde)
+  }else{
+    Poner(Verde)
+    Sacar(Negro)
+  }
+}
+
+
+
+*******************************************************************************************************
+
+
+
+Operadores:
+&& = conjuncion, toma dos expresiones booleanas y devuelve True solo si ambas son verdaderas.
+|| = disyunción, retorna verdadero si al menos alguna de las dos preguntas es verdadera.
+
+
+
+FUNCIONES
+
+
+Ejercicio 1.
+procedure MoverSegunBolitas() {
+  if (nroBolitas(Azul) + nroBolitas(Negro) + nroBolitas(Rojo) + nroBolitas(Verde) > 10) {
+    Mover(Este)
+  } else {
+    Mover(Norte)
+  }
+}
+
+
+Ejercicio 2.
+function nroBolitasTotal() {
+  return (nroBolitas(Azul) + nroBolitas(Negro) + nroBolitas(Rojo) + nroBolitas(Verde))
+}
+
+
+Ejercicio 3.
+procedure MoverSegunBolitas() {
+  if (nroBolitasTotal() > 10) {
+    Mover(Este)
+  } else {
+    Mover(Norte)
+  }
+}
+
+
+Ejercicio 4.
+function todasExcepto(color){
+  return (nroBolitasTotal() - nroBolitas(color))
+}
+
+
+Ejercicio 5.
+function rojoEsDominante(){
+  return (nroBolitas(Rojo) > todasExcepto(Rojo))
+}
+
+
+Ejercicio 6.
+function esLibreCostados(){
+  return (puedeMover(Este) && puedeMover(Oeste))
+}
+
+
+Ejercicio 7.
+function hayAlgunaBolita(){
+  return (hayBolitas(Rojo) || hayBolitas(Verde) || hayBolitas(Azul) || hayBolitas(Negro))
+}
+
+
+Ejercicio 8.
+function estoyEnUnBorde(){
+  return (not (puedeMover(Norte)) || not (puedeMover(Sur)) || not (puedeMover(Este)) || not (puedeMover(Oeste)))
+} 
+
+
+Ejercicio 9.
+function hayBolitasAl(direccion, color){
+  Mover(direccion)
+  return (hayBolitas(color))
+}
+
+
+Ejercicio 10.
+function hayBolitasAl(direccion, color) {
+  Mover(direccion)
+  return (hayBolitas(color))
+}
+
+
+Ejercicio 11.
+function hayBolitasLejosAl(direccion, color, distancia){
+  MoverN(distancia,direccion)
+  return (hayBolitas(color))
+}
+
+
+Ejercicio 12.
+function estoyRodeadoDe(color){
+  return (hayBolitasAl(Norte,color) && hayBolitasAl(Sur,color) && hayBolitasAl(Este,color) && hayBolitasAl(Oeste,color))
+}
+
+
+Ejercicio 13.
+function hayLimite(){
+  return (estoyEnUnBorde() || estoyRodeadoDe(Rojo))
+}
+
+
+
+*******************************************************************************************************
+*******************************************************************************************************
+
+
+
+CAPITULO 2 - PROGRAMACION IMPERATIVA
+
+
+
+FUNCIONES Y TIPOS DE DATOS
+
+
+Ejercicio 1.
+function mitad(numero) {
+   return numero / 2;
+}
+
+
+Ejercicio 2.
+function anterior(numero) {
+  return numero - 1;
+}
+function triple(numero) {
+  return numero * 3;
+}
+function anteriorDelTriple(numero) {
+   return anterior(triple(numero));
+}
+
+
+Ejercicio 3.
+4 + 5
+Math.round(4.5)
+funcionMisteriosa(1, 2, 3)
+
+
+Ejercicio 4.
+Math.round(4.4)
+Math.round(4.6)
+Math.max(4, 7)
+Math.min(4, 7)
+
+
+Ejercicio 5.
+function extraer(saldo, monto) {
+  return Math.max(saldo - monto, 0);
+}
+
+
+Ejercicio 6.
+function leGustaLeer(libros){
+	return libros > 20;
+}
+
+
+Ejercicio 7.
+function estaEntre(x,y,z){
+	return (x > y) && (x < z);
+}
+function estaFueraDeRango(x,y,z){
+	return (x < y) || (x > z);
+}
+
+
+Ejercicio 8.
+function esFinDeSemana(dia){
+  return (dia === "sábado") || (dia === "domingo")
+}
+
+
+Ejercicio 9.
+function longitudNombreCompleto(nombre1, nombre2, apellido) {
+  return longitud(nombre1) + 1 + longitud(nombre2) + 1 + longitud(apellido);
+}
+
+
+Ejercicio 10.
+function gritar(palabra){
+  return "¡" + convertirEnMayuscula(palabra) + "!";
+}
+
+
+Ejercicio 12.
+function maximo(numero1, numero2) {
+   if (numero1 >= numero2) {
+     return numero1;
+   } else {
+     return numero2;
+   }
+}
+
+
+Ejercicio 13.
+function signo(numero) {
+  if (numero > 0) {
+    return 1;
+  }  else  if (numero === 0) {
+    return 0;
+  } else {
+    return -1;
+  } 
+}
+
+
+Ejercicio 14.
+function esNumeroDeLaSuerte(numero){
+  return (numero > 0) && (numero < 100) && (numero !== 15);
+}
+
+
+Ejercicio 15.
+function medallaSegunPuesto(puesto){
+  if (puesto === 1){
+    return "oro";
+  }
+  if (puesto === 2){
+    return "plata";
+  }
+  if (puesto === 3){
+    return "bronce";
+  } else {
+    return "nada";
+  }
+}
+
+
+Ejercicio 16.
+5 + 6 (ok, los números se pueden sumar)
+5 === 6 (ok, todas las cosas se pueden comparar)
+8 > 6 (ok, los números se pueden ordenar)
+!true (ok, los booleanos se pueden negar)
+false / true (no está bien, ¡los booleanos no se pueden dividir!)
+
+
+Ejercicio 17.
+MARCAR - 4 + 4 vale 8
+MARCAR - "4" + "4" vale "44"
+4 + 4 vale "44"
+MARCAR - "on" + "ce" vale "once"
+MARCAR - true && false vale false
+true && false vale 0
+MARCAR - 5 >= 6 vale false
+MARCAR - ! true vale false
+
+
+*******************************************************************************************************
+
+
+PRACTICA FUNCIONES Y TIPOS DE DATOS
+
+
+Ejercicio 1.
+function cuantoCuesta(pulgadas, gb){
+  return 60 * pulgadas + 200 * gb + 1000;
+}
+
+
+Ejercicio 2.
+function meConviene(pulgadas, gb){
+  return cuantoCuesta(pulgadas, gb) < 6000 && pulgadas >= 32 && gb >= 8; 
+}
+
+
+Ejercicio 3.
+function perimetroTriangulo(lado1, lado2, lado3){
+  return lado1 + lado2 + lado3;
+}
+function areaTriangulo(base, altura){
+  return base * altura / 2;
+}
+
+
+Ejercicio 4.
+function perimetroCuadrado(lado){
+  return lado * 4;
+}
+function areaCuadrado(lado){
+  return lado * lado;
+}
+
+
+Ejercicio 5.
+function estaAfinado(frecuencia){
+  return frecuencia === 440;
+}
+
+
+Ejercicio 6.
+function estaCerca(frecuencia){
+  return frecuencia >= 437 && frecuencia <= 443 && frecuencia !== 440;
+}
+
+
+Ejercicio 7.
+function escribirCartelito(titulo, nombre, apellido){
+  return titulo + " " + nombre + " " + apellido;
+}
+
+
+Ejercicio 8.
+function escribirCartelito(titulo, nombre, apellido, corto){
+  if (corto){
+    return titulo + " " + apellido; 
+  } else {
+    return titulo + " " + nombre + " " + apellido;
+  }
+  
+}
+
+
+Ejercicio 9.
+function escribirCartelitoOptimo(titulo, nombre, apellido){
+  return escribirCartelito(titulo, nombre, apellido, (longitud(nombre + apellido) > 15));
+}
+
+
+Ejercicio 10.
+function decisionConMoneda(lado, decision1, decision2){
+  if (lado === "cara"){
+    return decision1;
+  } else {
+    return decision2;
+  }
+}
+
+
+Ejercicio 11.
+function valorEnvido(carta){
+  if (carta > 7){
+    return 0;
+  } else {
+    return carta;
+  }
+}
+
+
+Ejercicio 12.
+function puntosDeEnvidoTotales(carta1, palo1, carta2, palo2){
+  if (palo1 === palo2){
+    return 20 + valorEnvido(carta1) + valorEnvido(carta2);
+  } else {
+    return Math.max(valorEnvido(carta1), valorEnvido(carta2));
+  }
+}
+
+
+Ejercicio 13.
+function valorCantoTruco(canto){
+  if (canto === "truco"){
+    return 2;
+  }
+  if (canto === "retruco"){
+    return 3;
+  }
+  if (canto === "vale cuatro"){
+    return 4;
+  }
+}
+
+
+*******************************************************************************************************
+
+
+VARIABLES Y PROCEDIMIENTOS
+
+
+Ejercicio 1.
+funcionMisteriosa(1,2)
+funcionMisteriosa(3,20)
+ 
+
+Ejercicio 2.
+funcionEgocentrica()
+
+
+Ejercicio 3.
+function versosMartinFierro(){
+  imprimir("Aquí me pongo a cantar");
+  imprimir("Al compás de la vigüela;");
+  imprimir("Que el hombre que lo desvela");
+  imprimir("Una pena extraordinaria");
+  return 0;
+}
+
+
+Ejercicio 4.
+function versosMartinFierro() {
+    imprimir("Aquí me pongo a cantar");
+    imprimir("Al compás de la vigüela;");
+    imprimir("Que el hombre que lo desvela");
+    imprimir("Una pena extraordinaria");
+}
+
+
+Ejercicio 5.
+imprimir("Tirando dados");
+imprimir("La primera tirada dio " + tirarDado());
+imprimir("La segunda tirada dio " + tirarDado());
+imprimir("La tercera tirada dio " + tirarDado());
+
+
+
+Ejercicio 6.
+function elefantesEquilibristas(numero){
+  return numero + " elefantes se balanceaban";
+}
+
+
+Ejercicio 7.
+function perimetroCirculo(radio){
+  return radio * 2 * 3.14159265358979;
+}
+function areaCirculo(radio){
+  return radio * radio * 3.14159265358979;
+}
+
+
+Ejercicio 8.
+let pi = 3.14159265358979;
+
+function perimetroCirculo(radio){
+  return radio * 2 * pi;
+}
+function areaCirculo(radio){
+  return radio * radio * pi;
+}
+
+
+Ejercicio 9.
+sumaSinSentido(2)
+
+
+Ejercicio 10.
+let cargaMaximaEnKilogramos = 300;
+
+function ascensorSobrecargado(cantiaddepersonas){
+  return cantiaddepersonas * pesoPromedioPersonaEnKilogramos >= cargaMaximaEnKilogramos;
+}
+
+
+Ejercicio 11.
+function aumentarFortuna(){
+  pesosEnMiBilletera = pesosEnMiBilletera * 2; 
+}
+
+
+Ejercicio 12.
+"numero"
+8
+16
+MARCAR - 20
+true
+
+
+*******************************************************************************************************
+
+
+LOGICA BOOLEANA
+
+
+Ejercicio 1.
+let mochilaAbierta = true;
+
+function usarCierre() {
+  mochilaAbierta = !mochilaAbierta;
+}
+
+
+Ejercicio 2.
+function esMayorDeEdad(edad){
+  return edad >= 18;
+}
+
+function esMenorDeEdad(edad){
+  return !esMayorDeEdad(edad);
+}
+
+
+Ejercicio 3.
+function esPeripatetico(profesion, nacionalidad, cantidaddekilometros){
+  return profesion === "filosofo" && nacionalidad === "griego" && cantidaddekilometros > 2; 
+}
+
+
+Ejercicio 4.
+consumePocaEnergia(24, 0)
+consumePocaEnergia(21, 7)
+consumePocaEnergia(18, 1)
+consumePocaEnergia(24, 5)
+
+
+Ejercicio 5.
+gano(true, 25)
+gano(false, 30)
+gano(true, 31)
+gano(false, 20)
+
+
+Ejercicio 6.
+function esFinDeSemana(dia){
+  return dia === "sabado" || dia === "domingo"
+}
+
+function estaCerrado(esFeriado, dia, horario) {
+  return esFeriado || esFinDeSemana(dia) || !dentroDeHorarioBancario(horario);
+}
+
+
+Ejercicio 7.
+function tieneContraste(colordelaletra, colordelfondo){
+  return ((esTonoClaro(colordelaletra) && !esTonoClaro(colordelfondo)) || (!esTonoClaro(colordelaletra) && esTonoClaro(colordelfondo)))
+}
+
+
+Ejercicio 8.
+tieneContraste("amarillo", "beige")
+tieneContraste("azul", "violeta")
+tieneContraste("blanco", "negro")
+
+
+Ejercicio 9.
+function xor(a, b){
+  return (a && !b) || (!a && b);
+}
+
+
+Ejercicio 10.
+pagaConTarjeta(true, "crédito", 320)
+pagaConTarjeta(false, "crédito", 80)
+pagaConTarjeta(true, "débito", 215)
+pagaConTarjeta(true, "débito", 32)
+ 
+
+Ejercicio 11.
+function sePuedeConcentrar(bebida, temperatura, booleano){
+  return (((bebida === "té" && temperatura >= 95)|| (bebida === "mate" && temperatura === 80)) && booleano);
+}
+
+
+Ejercicio 12.
+function puedeSubirse(altura, estaracompañada, afeccioncardiaca){
+  return ((altura >= 1.5) || (altura >= 1.2 && estaracompañada)) && !afeccioncardiaca
+} 
+
+
+*******************************************************************************************************
+
+
+LISTAS
+
+
+Ejercicio 1.
+seriesFavoritasDeAna
+seriesFavoritasDeHector
+["hola","mundo!"]
+["hola","hola"]
+
+
+Ejercicio 2.
+listasIguales(["hola", "mundo"], ["mundo", "hola"])
+listasIguales(["hola", "mundo"], ["hola", "mundo"])
+listasIguales(["hola", "mundo"], ["hola", "todo", "el", "mundo"])
+listasIguales(["hola"], ["hola", "mundo"])
+["hola", "mundo"] === ["mundo", "hola"]
+personas
+["mara", "julian"] === personas
+personas === personas
+
+
+Ejercicio 3.
+numerosDeLoteria
+salioCara
+[[1, 2, 3], [4, 5, 6]]
+
+
+Ejercicio 4.
+unaListaVacia
+
+
+Ejercicio 5.
+longitud([])
+longitud(numerosDeLoteria)
+longitud([4, 3])
+
+
+Ejercicio 6.
+pertenencias
+agregar(pertenencias, "ballesta")
+remover(pertenencias, "escudo")
+
+
+Ejercicio 7.
+function trasladar(unaLista, otraLista, elemento){
+  agregar(otraLista,elemento);
+  remover(unaLista, elemento);
+}
+
+
+Ejercicio 8.
+posicion(diasLaborales, "osvaldo")
+
+
+Ejercicio 9.
+function contiene(lista, elemento){
+  return posicion(lista, elemento) >= 0;
+}
+
+
+Ejercicio 10.
+[][0]
+
+
+Ejercicio 11.
+let medallas = ["oro", "plata", "bronce"]
+
+function medallaSegunPuesto(puesto){
+  if (puesto >= 4){
+    return "nada";
+  } else {
+    return medallas[puesto - 1];
+  }
+}
+
+
+Ejercicio 12.
+function saludar(personas) {
+  for(let persona of personas) {
+    imprimir ("hola" + " " + persona);
+  }
+}
+
+
+
+*******************************************************************************************************
+
+
+REGISTROS
+
+
+Ejercicio 1.
+estatuaDeLaLibertad
+cristoRedentor
+torreEiffel
+tajMahal
+coliseo
+
+
+Ejercicio 2.
+let torreAzadi = { nombre: "Torre Azadi", locacion: "Teherán, Irán", anioDeConstruccion: 1971 };
+let monumentoNacionalALaBandera = { nombre: "Monumento Nacional a la bandera", locacion: "Rosario, Argentina", anioDeConstruccion: 1957 };
+
+
+Ejercicio 3.
+mercurio.nombre
+marte.temperaturaPromedio
+saturno.tieneAnillos
+
+
+Ejercicio 4.
+function temperaturaDePlaneta(planeta){
+  return planeta.nombre + " tiene una temperatura promedio de " + planeta.temperaturaPromedio + " grados";
+}
+
+
+Ejercicio 5.
+function moverArchivo(registro, nuevaruta){
+  registro.ruta = nuevaruta
+}
+
+
+Ejercicio 6.
+function esDelMilenioPasado(archivo) {  return anio(archivo.creacion) < "2000";
+}
+
+
+Ejercicio 7.
+function masDificilDeCocinar(postre1, postre2) {
+  if (longitud(postre1.ingredientes) > longitud(postre2.ingredientes)) {  return postre1;
+ } else {
+   return postre2;  
+   }
+}
+
+
+Ejercicio 8.
+postresFavoritos
+monumentosDeAmerica
+
+
+Ejercicio 9.
+function agregarAPostresRapidos(postresrapidos, postre){
+  if (postre.tiempoDeCoccion <= 60){
+    agregar(postresrapidos, postre);
+  }
+}
+
+
+Ejercicio 10.
+menuInfantil.postre.ingredientes
+
+
+Ejercicio 12.
+function endulzarMenu(menu){
+	agregar(menu.postre.ingredientes, "azúcar");
+}
+
+
+
+*******************************************************************************************************
+
+
+RECORRIDO
+
+
+Ejercicio 1.
+gananciaSemestre(balancesPrimerTrimestre)
+gananciaSemestre(balancesUltimoCuatrimestre)
+
+
+Ejercicio 2.
+gananciaTotal([
+    { mes: "enero", ganancia: 2 }, 
+    { mes: "febrero", ganancia: 3 }
+])
+gananciaTotal([
+    { mes: "enero", ganancia: 2 }, 
+    { mes: "febrero", ganancia: 3 }, 
+    { mes: "marzo", ganancia: 1 }, 
+    { mes: "abril", ganancia: 8 }, 
+    { mes: "mayo", ganancia: 8 }, 
+    { mes: "junio", ganancia: -1 }
+])
+gananciaTotal([])
+
+
+Ejercicio 3.
+function gananciaTotal4(balancesDeUnPeriodo){
+  let sumatoria = 0;
+  sumatoria = sumatoria + balancesDeUnPeriodo[0].ganancia;
+  sumatoria = sumatoria + balancesDeUnPeriodo[1].ganancia;
+  sumatoria = sumatoria + balancesDeUnPeriodo[2].ganancia;
+  sumatoria = sumatoria + balancesDeUnPeriodo[3].ganancia;
+  return sumatoria;
+}
+
+
+Ejercicio 4.
+gananciaTotal([])
+gananciaTotal([{ mes: "noviembre", ganancia: 5 }])
+gananciaTotal([{ mes: "marzo", ganancia: 8 }, { mes: "agosto", ganancia: 10 }])
+gananciaTotal([{ mes: "enero", ganancia: 2 }, { mes: "febrero", ganancia: 10 }, { mes: "marzo", ganancia: -20 }])
+gananciaTotal([{ mes: "enero", ganancia: 2 }, { mes: "febrero", ganancia: 10 }, { mes: "marzo", ganancia: -20 }, { mes: "abril", ganancia: 0 }, { mes: "mayo", ganancia: 10 }])
+
+
+Ejercicio 5.
+function cantidadDeBalancesPositivos(balancesDeUnPeriodo) {
+  let cantidad = 0;
+  for (let balance of balancesDeUnPeriodo) {
+    if (balance.ganancia > 0){
+      cantidad = cantidad +1;
+    }
+  }
+  return cantidad;
+}
+
+
+Ejercicio 6.
+function gananciaPromedio(balances){
+  return gananciaTotal(balances) / longitud(balances)
+}
+
+
+Ejercicio 7.
+function gananciaPositiva(balancesDeUnPeriodo){
+  let sumatoria = 0;
+  for (let balance of balancesDeUnPeriodo){
+    if (balance.ganancia > 0){
+      sumatoria = sumatoria + balance.ganancia;
+    }
+  }
+  return sumatoria;
+}
+
+function promedioGananciasPositivas(balancesDeUnPeriodo){
+  return gananciaPositiva(balancesDeUnPeriodo) / cantidadDeBalancesPositivos(balancesDeUnPeriodo);
+}
+
+
+Ejercicio 8.
+function ganancias(balancesDeUnPeriodo) {
+  let ganancias = [];
+  for (let balance of balancesDeUnPeriodo) {
+    agregar(ganancias, balance.ganancia)
+  }
+  return ganancias;
+}
+
+
+
+Ejercicio 9.
+function balancesPositivos(balancesDeUnPeriodo) {
+  let balances = [];
+  for (let balance of balancesDeUnPeriodo) {
+    if (balance.ganancia > 0){
+      agregar(balances, balance);
+    }
+  }
+  return balances;
+}
+
+
+Ejercicio 10.
+function gananciasDeBalancesPositivos(balancesDeUnPeriodo){
+  return ganancias(balancesPositivos(balancesDeUnPeriodo));
+}
+
+function promedioDeBalancesPositivos(balancesDeUnPeriodo){
+  return promedio(gananciasDeBalancesPositivos(balancesDeUnPeriodo));
+}
+
+
+Ejercicio 11.
+function maximaGanancia(balancesDeUnPeriodo){
+  return maximo(ganancias(balancesDeUnPeriodo));
+}
+
+
+Ejercicio 12.
+function minimaGananciaPositiva(balancesDeUnPeriodo){
+  return minimo(gananciasDeBalancesPositivos(balancesDeUnPeriodo));
+}
+
+
+Ejercicio 13.
+function meses(balancesDeUnPeriodo){
+  let listademeses = [];
+  for (let balance of balancesDeUnPeriodo){
+    agregar(listademeses, balance.mes);
+  }
+  return listademeses;
+}
+
+function afortunados(balancesDeUnPeriodo){
+  let afortunadosmeses = [];
+  for (let balance of balancesDeUnPeriodo){
+    if (balance.ganancia > 1000){
+      agregar(afortunadosmeses, balance);
+    }
+  }
+  return afortunadosmeses;
+}
+
+function mesesAfortunados(balancesDeUnPeriodo){
+  return meses(afortunados(balancesDeUnPeriodo));
+}
+

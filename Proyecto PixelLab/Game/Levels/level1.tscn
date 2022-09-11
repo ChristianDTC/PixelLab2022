@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game/Player/PlayerSaltarina.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resource/Background/bg_layer1.png" type="Texture" id=3]
+[ext_resource path="res://Game/Objects/Spike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Enemys/SpikeMan.tscn" type="PackedScene" id=5]
+
+[node name="level1" type="Node"]
+
+[node name="BgLayer1" type="Sprite" parent="."]
+position = Vector2( 549.4, 422 )
+scale = Vector2( 1.25156, 0.716797 )
+z_index = -50
+texture = ExtResource( 3 )
+
+[node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
+position = Vector2( 638, 816 )
+
+[node name="Plataforms" type="Node" parent="."]
+
+[node name="Plataform" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 606, 445 )
+
+[node name="Plataform10" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 1198, 807 )
+rotation = 0.00802079
+
+[node name="Plataform11" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 538, 814 )
+rotation = 0.00802079
+
+[node name="Plataform9" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 417, 499 )
+
+[node name="Plataform5" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 721, 445 )
+
+[node name="Plataform6" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 836, 445 )
+
+[node name="Plataform7" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 990, 381 )
+
+[node name="Plataform8" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 1148, 325 )
+
+[node name="Plataform2" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 93, 638 )
+
+[node name="Plataform3" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 252, 568 )
+
+[node name="Plataform4" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 820, 841 )
+scale = Vector2( 5.38153, 0.463525 )
+
+[node name="Enemys" type="Node" parent="."]
+
+[node name="SpikeMan" parent="Enemys" instance=ExtResource( 5 )]
+position = Vector2( 791, 819 )
+
+[node name="Danger" type="Node" parent="."]
+
+[node name="Spike" parent="Danger" instance=ExtResource( 4 )]
+position = Vector2( 744, 432 )
+
+[node name="Spike2" parent="Danger" instance=ExtResource( 4 )]
+position = Vector2( 1123, 821 )
+
+[node name="Spike3" parent="Danger" instance=ExtResource( 4 )]
+position = Vector2( 376, 820 )
+
+[connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]

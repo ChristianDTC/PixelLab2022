@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resource/Enemies/spikeMan_walk2.png" type="Texture" id=1]
+[ext_resource path="res://Resource/Enemies/spikeMan_walk1.png" type="Texture" id=2]
+[ext_resource path="res://Game/Enemys/SpikeMan.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "run",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 22.5, 3.33333 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 33.3333
+height = 26.6667
+
+[node name="SpikeMan" type="KinematicBody2D"]
+scale = Vector2( 0.3, 0.3 )
+z_index = 35
+z_as_relative = false
+collision_layer = 4
+collision_mask = 10
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -76.6667 )
+z_index = 35
+z_as_relative = false
+frames = SubResource( 1 )
+animation = "run"
+frame = 1
+
+[node name="CollisionFeet" type="CollisionShape2D" parent="."]
+position = Vector2( 2.5, -3.33333 )
+z_index = 35
+z_as_relative = false
+shape = SubResource( 2 )
+
+[node name="DetectEmpty" type="RayCast2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 63.3333, 0 )
+scale = Vector2( 2, 1 )
+z_as_relative = false
+enabled = true
+cast_to = Vector2( 0, 35 )
+collision_mask = 8
+
+[node name="DetectObject" type="RayCast2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 46.6667, -16.6667 )
+scale = Vector2( 2, 2 )
+z_as_relative = false
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 40
+
+[node name="DetecPlayer" type="Area2D" parent="."]
+z_index = 35
+z_as_relative = false
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetecPlayer"]
+position = Vector2( 0, -50 )
+z_as_relative = false
+shape = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetecPlayer"]
+z_as_relative = false
+polygon = PoolVector2Array( -13.3333, -100, 0, -150, 13.3333, -100, 13.3333, -100 )
+
+[connection signal="body_entered" from="DetecPlayer" to="." method="_on_DetecPlayer_body_entered"]
