@@ -15,10 +15,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
-"speed": 2.0
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
@@ -32,11 +32,11 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 30.0
-height = 86.6667
+radius = 39.4737
+height = 46.0474
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 38.3333, 4.16667 )
+extents = Vector2( 38.3333, 7.08334 )
 
 [node name="PlayerSaltarina" type="KinematicBody2D"]
 position = Vector2( 2, -1 )
@@ -46,13 +46,7 @@ z_as_relative = false
 collision_layer = 2
 collision_mask = 29
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-speed = Vector2( 300, 450 )
 acel_down = 900
-str_jump = 3500
-str_bounce = 300
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -63,16 +57,17 @@ drag_margin_top = 0.1
 drag_margin_bottom = 0.1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -100 )
+position = Vector2( 0, -96.6667 )
 frames = SubResource( 2 )
 animation = "idle"
 
 [node name="CollisionBody2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -76.6667 )
+scale = Vector2( 1.26754, 1.06671 )
 shape = SubResource( 1 )
 
 [node name="CollisionFeet2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.66667, -3.33333 )
+position = Vector2( -1.66667, -6.25 )
 shape = SubResource( 3 )
 
 [node name="sfx_jump" type="AudioStreamPlayer" parent="."]
