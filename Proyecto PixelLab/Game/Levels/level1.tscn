@@ -86,4 +86,6 @@ position = Vector2( 195, 150 )
 [node name="WindMan" parent="." instance=ExtResource( 6 )]
 position = Vector2( 311, 777 )
 
+[node name="Bolts" type="Node2D" parent="."]
+
 [connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]

@@ -60,11 +60,11 @@ position = Vector2( -8.57143, 37.1429 )
 scale = Vector2( 1, 1 )
 
 [node name="PositionLeft" type="Position2D" parent="Sprite/PositionsShots"]
-position = Vector2( -41.4286, 37.1429 )
+position = Vector2( -50, 37.1429 )
 scale = Vector2( 1, 1 )
 
 [node name="PositionRight" type="Position2D" parent="Sprite/PositionsShots"]
-position = Vector2( 24.2857, 37.1429 )
+position = Vector2( 32.8571, 37.1429 )
 scale = Vector2( 1, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -18,7 +18,7 @@ func shoot():
 	for position in positions_shots.get_children():
 		var new_bolt = bolt.instance()
 		new_bolt.create(position.global_position)
-		add_child(new_bolt)
+		owner.get_node("Bolts").add_child(new_bolt)
 
 
 func _on_Timer_timeout():
