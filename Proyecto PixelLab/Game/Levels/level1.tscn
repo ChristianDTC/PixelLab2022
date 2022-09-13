@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/Player/PlayerSaltarina.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Game/Objects/Spike.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Enemys/SpikeMan.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Enemys/WindMan.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Enemys/Cloud.tscn" type="PackedScene" id=7]
 
 [node name="level1" type="Node"]
 
@@ -16,7 +17,7 @@ z_index = -50
 texture = ExtResource( 3 )
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
-position = Vector2( 153, 812 )
+position = Vector2( 417, 476 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -63,6 +64,9 @@ scale = Vector2( 5.38153, 0.463525 )
 
 [node name="SpikeMan" parent="Enemys" instance=ExtResource( 5 )]
 position = Vector2( 791, 819 )
+
+[node name="Cloud" parent="Enemys" instance=ExtResource( 7 )]
+position = Vector2( 135, 77 )
 
 [node name="Danger" type="Node" parent="."]
 
