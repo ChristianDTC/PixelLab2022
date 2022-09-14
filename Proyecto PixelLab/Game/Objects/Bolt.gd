@@ -17,3 +17,14 @@ func _process(delta):
 	global_position.y += velocity * delta
 
 
+func _on_VisibilityNotifier2D_screen_exited():
+	destroy()
+
+func destroy():
+	queue_free()
+
+func _on_Bolt_body_entered(body):
+	if body.is_in_group("player"):
+		body.respawn()
+		
+	destroy()
