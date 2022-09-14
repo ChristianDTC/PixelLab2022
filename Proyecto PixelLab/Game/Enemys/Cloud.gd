@@ -3,6 +3,7 @@ extends Node2D
 onready var detect_player = $Sprite/RayCast2D
 onready var positions_shots = $Sprite/PositionsShots
 onready var reset_timer = $Timer
+onready var sfx_shot_bolt = $shot_bolt
 
 export  var bolt: PackedScene
 
@@ -15,6 +16,7 @@ func _process(delta):
 		reset_timer.start()
 
 func shoot():
+	sfx_shot_bolt.play()
 	for position in positions_shots.get_children():
 		var new_bolt = bolt.instance()
 		new_bolt.create(position.global_position)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resource/Enemies/cloud.png" type="Texture" id=1]
 [ext_resource path="res://Game/Enemys/Cloud.gd" type="Script" id=2]
 [ext_resource path="res://Game/Objects/Bolt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resource/Sfx/shot_bolt.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -57,15 +58,12 @@ collision_mask = 2
 
 [node name="PositionCenter" type="Position2D" parent="Sprite/PositionsShots"]
 position = Vector2( -8.57143, 37.1429 )
-scale = Vector2( 1, 1 )
 
 [node name="PositionLeft" type="Position2D" parent="Sprite/PositionsShots"]
 position = Vector2( -50, 37.1429 )
-scale = Vector2( 1, 1 )
 
 [node name="PositionRight" type="Position2D" parent="Sprite/PositionsShots"]
 position = Vector2( 32.8571, 37.1429 )
-scale = Vector2( 1, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move"
@@ -73,5 +71,9 @@ anims/RESET = SubResource( 1 )
 anims/move = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="shot_bolt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -46.091
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
