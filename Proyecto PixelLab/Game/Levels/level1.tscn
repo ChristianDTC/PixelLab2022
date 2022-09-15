@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game/Player/PlayerSaltarina.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=2]
@@ -7,18 +7,20 @@
 [ext_resource path="res://Game/Enemys/SpikeMan.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Enemys/WindMan.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Enemys/Cloud.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Game/Objects/Bolt.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Objects/CoinBronze.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Objects/CoinSilver.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/Objects/CoinGold.tscn" type="PackedScene" id=10]
 
 [node name="level1" type="Node"]
 
 [node name="BgLayer1" type="Sprite" parent="."]
-position = Vector2( 549.4, 422 )
+position = Vector2( 362, 669 )
 scale = Vector2( 1.25156, 0.716797 )
 z_index = -50
 texture = ExtResource( 3 )
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
-position = Vector2( 417, 476 )
+position = Vector2( -83, 814 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -37,7 +39,7 @@ position = Vector2( 538, 814 )
 rotation = 0.00802079
 
 [node name="Plataform9" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 417, 499 )
+position = Vector2( 492, 445 )
 
 [node name="Plataform5" parent="Plataforms" instance=ExtResource( 2 )]
 position = Vector2( 721, 445 )
@@ -46,16 +48,25 @@ position = Vector2( 721, 445 )
 position = Vector2( 836, 445 )
 
 [node name="Plataform7" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 990, 381 )
+position = Vector2( 1063, 534 )
+
+[node name="Plataform12" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 1278, 628 )
 
 [node name="Plataform8" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 1148, 325 )
+position = Vector2( 1335, 712 )
 
 [node name="Plataform2" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 93, 638 )
+position = Vector2( 83, 735 )
+
+[node name="Plataform14" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( -128, 826 )
 
 [node name="Plataform3" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 252, 568 )
+position = Vector2( 270, 571 )
+
+[node name="Plataform13" parent="Plataforms" instance=ExtResource( 2 )]
+position = Vector2( 158, 653 )
 
 [node name="Plataform4" parent="Plataforms" instance=ExtResource( 2 )]
 position = Vector2( 820, 841 )
@@ -66,11 +77,23 @@ scale = Vector2( 5.38153, 0.463525 )
 [node name="SpikeMan" parent="Enemys" instance=ExtResource( 5 )]
 position = Vector2( 791, 819 )
 
+[node name="SpikeMan2" parent="Enemys" instance=ExtResource( 5 )]
+position = Vector2( 283, 821 )
+
 [node name="Cloud" parent="Enemys" instance=ExtResource( 7 )]
-position = Vector2( 135, 77 )
+position = Vector2( 135, 153 )
+
+[node name="Cloud2" parent="Enemys" instance=ExtResource( 7 )]
+position = Vector2( 1187, 244 )
 
 [node name="WindMan" parent="Enemys" instance=ExtResource( 6 )]
-position = Vector2( 311, 777 )
+position = Vector2( 376, 509 )
+
+[node name="WindMan2" parent="Enemys" instance=ExtResource( 6 )]
+position = Vector2( 948, 484 )
+
+[node name="WindMan3" parent="Enemys" instance=ExtResource( 6 )]
+position = Vector2( 1181, 571 )
 
 [node name="Danger" type="Node" parent="."]
 
@@ -83,9 +106,17 @@ position = Vector2( 1123, 821 )
 [node name="Spike3" parent="Danger" instance=ExtResource( 4 )]
 position = Vector2( 376, 820 )
 
-[node name="Bolt" parent="Danger" instance=ExtResource( 8 )]
-position = Vector2( 195, 150 )
-
 [node name="Bolts" type="Node2D" parent="."]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="CoinBronze" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( -141, 721 )
+
+[node name="CoinGold" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( -101, 676 )
+
+[node name="CoinSilver" parent="Coins" instance=ExtResource( 9 )]
+position = Vector2( -65, 721 )
 
 [connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]
