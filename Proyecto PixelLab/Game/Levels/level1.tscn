@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/Player/PlayerSaltarina.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Game/Objects/CoinBronze.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/Objects/CoinSilver.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Objects/CoinGold.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/Objects/Spring.tscn" type="PackedScene" id=11]
 
 [node name="level1" type="Node"]
 
@@ -20,7 +21,7 @@ z_index = -50
 texture = ExtResource( 3 )
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
-position = Vector2( -83, 814 )
+position = Vector2( -114, 806 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -28,7 +29,7 @@ __meta__ = {
 [node name="Plataforms" type="Node" parent="."]
 
 [node name="Plataform" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 606, 445 )
+position = Vector2( 562, 445 )
 
 [node name="Plataform10" parent="Plataforms" instance=ExtResource( 2 )]
 position = Vector2( 1198, 807 )
@@ -75,10 +76,10 @@ scale = Vector2( 5.38153, 0.463525 )
 [node name="Enemys" type="Node" parent="."]
 
 [node name="SpikeMan" parent="Enemys" instance=ExtResource( 5 )]
-position = Vector2( 791, 819 )
+position = Vector2( 779, 818 )
 
 [node name="SpikeMan2" parent="Enemys" instance=ExtResource( 5 )]
-position = Vector2( 283, 821 )
+position = Vector2( 140, 818 )
 
 [node name="Cloud" parent="Enemys" instance=ExtResource( 7 )]
 position = Vector2( 135, 153 )
@@ -118,5 +119,8 @@ position = Vector2( -101, 676 )
 
 [node name="CoinSilver" parent="Coins" instance=ExtResource( 9 )]
 position = Vector2( -65, 721 )
+
+[node name="Spring" parent="." instance=ExtResource( 11 )]
+position = Vector2( -24, 783 )
 
 [connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]

@@ -9,7 +9,7 @@ export var impulse = -4500
 var move = Vector2.ZERO
 
 onready var animation = $AnimatedSprite
-onready var sfx_jump = $sfx_jump
+onready var sfx_jump = $SfxJump
 onready var camera = $Camera2D
 
 func _physics_process(delta):

@@ -70,6 +70,6 @@ shape = SubResource( 1 )
 position = Vector2( -1.66667, -6.25 )
 shape = SubResource( 3 )
 
-[node name="sfx_jump" type="AudioStreamPlayer" parent="."]
+[node name="SfxJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -46.091

@@ -17,7 +17,6 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 30.0875
-height = 20.0
 
 [node name="SpikeMan" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
@@ -47,7 +46,7 @@ collision_mask = 8
 
 [node name="DetectObject" type="RayCast2D" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 46.6667, -16.6667 )
+position = Vector2( 46.6667, -30 )
 scale = Vector2( 2, 2 )
 z_index = 36
 z_as_relative = false
@@ -67,7 +66,7 @@ frame = 1
 z_index = 36
 z_as_relative = false
 collision_layer = 32
-collision_mask = 2
+collision_mask = 10
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetecPlayer"]
 scale = Vector2( -1.32069, 0.975045 )
