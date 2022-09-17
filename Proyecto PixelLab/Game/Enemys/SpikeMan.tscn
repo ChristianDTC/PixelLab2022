@@ -66,7 +66,7 @@ frame = 1
 z_index = 36
 z_as_relative = false
 collision_layer = 32
-collision_mask = 10
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetecPlayer"]
 scale = Vector2( -1.32069, 0.975045 )

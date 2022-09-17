@@ -39,5 +39,5 @@ func anime(value_present):
 	animation.flip_h = !value_present
 	
 
-#func _on_DetecPlayer_body_entered(body): 
-#	body.respawn()
+func _on_DetecPlayer_body_entered(body): 
+	body.respawn()
