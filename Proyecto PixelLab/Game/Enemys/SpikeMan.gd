@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var velocity = 100.0
 
-var gravity = 100.0
+var gravity = 800.0
 var move = Vector2.ZERO
 
 onready var animation = $AnimatedSprite
