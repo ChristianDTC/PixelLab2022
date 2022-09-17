@@ -7,10 +7,15 @@ export var str_bounce = 300
 export var impulse = -4500
 
 var move = Vector2.ZERO
+var str_jump_original
 
 onready var animation = $AnimatedSprite
 onready var sfx_jump = $SfxJump
 onready var camera = $Camera2D
+onready var reset_power_up = $ResetPowerUp
+
+func _ready():
+	str_jump_original = str_jump
 
 func _physics_process(delta):
 	move.x = speed.x * select_direction()
@@ -61,6 +66,13 @@ func impulse():
 func respawn():
 	get_tree().reload_current_scene()
 
+func change_str_jump():
+	reset_power_up.start()
+	str_jump = -impulse * 0.9
 
 func _on_level1_ready():
 	pass # Replace with function body.
+
+
+func _on_ResetPowerUp_timeout():
+	str_jump = str_jump_original
