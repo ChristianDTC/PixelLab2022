@@ -18,13 +18,13 @@
 [node name="level1" type="Node"]
 
 [node name="BgLayer1" type="Sprite" parent="."]
-position = Vector2( 836, 355 )
+position = Vector2( 763, 459 )
 scale = Vector2( 1.73076, 1.02783 )
 z_index = -50
 texture = ExtResource( 3 )
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
-position = Vector2( -128, 774 )
+position = Vector2( -118, 804 )
 
 [node name="Plataforms" type="Node" parent="."]
 
@@ -58,7 +58,7 @@ position = Vector2( 1278, 628 )
 position = Vector2( 1335, 712 )
 
 [node name="Plataform2" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 83, 735 )
+position = Vector2( 37, 735 )
 
 [node name="Plataform14" parent="Plataforms" instance=ExtResource( 2 )]
 position = Vector2( -128, 826 )
@@ -82,7 +82,7 @@ position = Vector2( -326, 796 )
 position = Vector2( 779, 818 )
 
 [node name="SpikeMan2" parent="Enemys" instance=ExtResource( 5 )]
-position = Vector2( 57, 819 )
+position = Vector2( 292, 818 )
 
 [node name="Cloud" parent="Enemys" instance=ExtResource( 7 )]
 position = Vector2( 135, 153 )
@@ -108,10 +108,8 @@ position = Vector2( 744, 432 )
 position = Vector2( 1123, 821 )
 
 [node name="Spike3" parent="Danger" instance=ExtResource( 4 )]
-position = Vector2( 174, 676 )
+position = Vector2( 135, 667 )
 is_cheat = true
-
-[node name="Bolts" type="Node2D" parent="Danger"]
 
 [node name="Object" type="Node" parent="."]
 
@@ -119,7 +117,7 @@ is_cheat = true
 position = Vector2( 215, 818 )
 
 [node name="PowerUpJump" parent="Object" instance=ExtResource( 12 )]
-position = Vector2( 37, 511 )
+position = Vector2( 37, 585 )
 
 [node name="PowerUpFly" parent="Object" instance=ExtResource( 13 )]
 position = Vector2( -315, 915 )
@@ -135,5 +133,7 @@ position = Vector2( -350, 341 )
 
 [node name="CoinSilver" parent="Object/Coins" instance=ExtResource( 9 )]
 position = Vector2( -314, 387 )
+
+[node name="Bolts" type="Node2D" parent="."]
 
 [connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]

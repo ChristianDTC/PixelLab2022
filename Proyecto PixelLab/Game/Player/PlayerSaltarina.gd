@@ -82,7 +82,7 @@ func respawn():
 
 func change_str_jump():
 	reset_power_up_jump.start()
-	str_jump = -impulse * 0.9
+	str_jump = -impulse * 2
 
 func _on_level1_ready():
 	pass # Replace with function body.
