@@ -24,7 +24,7 @@ z_index = -50
 texture = ExtResource( 3 )
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -226 )
+position = Vector2( -128, 774 )
 
 [node name="Plataforms" type="Node" parent="."]
 
@@ -128,8 +128,9 @@ position = Vector2( 215, 818 )
 position = Vector2( 37, 511 )
 
 [node name="PowerUpFly" parent="." instance=ExtResource( 13 )]
-position = Vector2( -85, 651 )
+position = Vector2( -315, 915 )
 
 [node name="PlataformBroken" parent="." instance=ExtResource( 14 )]
+position = Vector2( -326, 796 )
 
 [connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]
