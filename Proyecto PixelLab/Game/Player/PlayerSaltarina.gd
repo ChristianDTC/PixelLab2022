@@ -16,9 +16,10 @@ onready var sfx_jump = $SfxJump
 onready var camera = $Camera2D
 onready var reset_power_up_jump = $ResetPowerUpJump
 onready var reset_power_up_fly = $ResetPowerUpFly
-onready var animation_power_up = $AnimationPlayer
+onready var animation_player = $AnimationPlayer
 
 func _ready():
+	animation_player.play("clarify")
 	str_jump_original = str_jump
 	acel_down_original = acel_down
 
@@ -68,7 +69,7 @@ func crash_roof():
 func fly():
 	reset_power_up_fly.start()
 	acel_down = 150
-	animation_power_up.play("fly")
+	animation_player.play("fly")
 	move_jump()
 
 
@@ -80,6 +81,7 @@ func impulse():
 	move.y = impulse
 
 func respawn():
+	animation_player.play("obscure")
 	get_tree().reload_current_scene()
 
 func change_str_jump():
@@ -95,12 +97,12 @@ func _on_ResetPowerUpJump_timeout():
 
 
 func _on_ResetPowerUpFly_timeout():
-	animation_power_up.play("default")
+	animation_player.play("default")
 	acel_down = acel_down_original
 
 func play_enter_portal(position_portal):
 	can_move = false
-	$AnimationPlayer.play("enter_portal")
+	animation_player.play("enter_portal")
 	$Tween.interpolate_property(
 		self,
 		"global_position",
@@ -111,3 +113,9 @@ func play_enter_portal(position_portal):
 		Tween.EASE_IN_OUT
 	)
 	$Tween.start()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "enter_portal":
+		animation_player.play("obscure")
+	

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Player/PlayerSaltarina.tscn" type="PackedScene" id=2]
+
+[node name="LevelTemporal" type="Node2D"]
+
+[node name="Plataform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 470, 257 )
+scale = Vector2( 2, 0.3 )
+
+[node name="PlayerSaltarina" parent="." instance=ExtResource( 2 )]
+position = Vector2( 429, 237 )

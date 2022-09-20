@@ -29,6 +29,10 @@ texture = ExtResource( 3 )
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
 position = Vector2( -146, 810 )
+speed = Vector2( 300, 450 )
+str_jump = 3500
+str_bounce = 300
+impulse = -4500
 
 [node name="Plataforms" type="Node" parent="."]
 
@@ -151,5 +155,6 @@ position = Vector2( -55, -31 )
 
 [node name="Portal" parent="." instance=ExtResource( 15 )]
 position = Vector2( -459, 712 )
+next_level = "res://Game/Levels/LevelTemporal.tscn"
 
 [connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]

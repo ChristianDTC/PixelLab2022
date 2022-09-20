@@ -153,6 +153,7 @@ z_as_relative = false
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 4 )
+next_level = "res://Game/"
 
 [node name="Particles2D" type="Particles2D" parent="."]
 visible = false
