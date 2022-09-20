@@ -5,11 +5,11 @@ export var acel_down = 400
 export var str_jump = 3500
 export var str_bounce = 300
 export var impulse = -4500
-#export var acel_down_power_up = 60
 
 var move = Vector2.ZERO
 var str_jump_original
 var acel_down_original
+var can_move = true
 
 onready var animation = $AnimatedSprite
 onready var sfx_jump = $SfxJump
@@ -31,15 +31,17 @@ func _physics_process(delta):
 	fall_down()
 
 func select_direction():
-	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	if direction == 0:
-		animation.play("idle")
-	else:
-		if direction < 0:
-			animation.flip_h = true
+	var direction = 0
+	if can_move:
+		direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		if direction == 0:
+			animation.play("idle")
 		else:
-			animation.flip_h = false
-		animation.play("run")
+			if direction < 0:
+				animation.flip_h = true
+			else:
+				animation.flip_h = false
+			animation.play("run")
 	
 	return direction
 
@@ -50,7 +52,7 @@ func down():
 		move.y = clamp(move.y, impulse, speed.y)
 		
 func jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and can_move:
 		sfx_jump.play()
 		animation.play("jump")
 		move_jump()
@@ -95,5 +97,17 @@ func _on_ResetPowerUpJump_timeout():
 func _on_ResetPowerUpFly_timeout():
 	animation_power_up.play("default")
 	acel_down = acel_down_original
-	
-	
+
+func play_enter_portal(position_portal):
+	can_move = false
+	$AnimationPlayer.play("enter_portal")
+	$Tween.interpolate_property(
+		self,
+		"global_position",
+		global_position,
+		position_portal,
+		0.8,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN_OUT
+	)
+	$Tween.start()

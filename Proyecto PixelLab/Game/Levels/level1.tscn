@@ -150,6 +150,6 @@ position = Vector2( -326, 751 )
 position = Vector2( -55, -31 )
 
 [node name="Portal" parent="." instance=ExtResource( 15 )]
-position = Vector2( -436, 714 )
+position = Vector2( -459, 712 )
 
 [connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]
