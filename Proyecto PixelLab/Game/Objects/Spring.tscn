@@ -136,6 +136,9 @@ extents = Vector2( 15, 2 )
 collision_layer = 8
 collision_mask = 2
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Idle" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
