@@ -12,3 +12,8 @@ func _input(event):
 func _on_ButtonContinue_pressed():
 	get_tree().paused = false
 	visible = not visible
+
+
+func _on_ButtonMenuPrincipal_pressed():
+	get_tree().change_scene("res://Game/Menus/MenuPrincipal.tscn")
+	get_tree().paused = false
