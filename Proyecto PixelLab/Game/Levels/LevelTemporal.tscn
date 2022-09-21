@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player/PlayerSaltarina.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resource/Background/bg_layer2.png" type="Texture" id=3]
+[ext_resource path="res://Resource/Background/bg_layer3.png" type="Texture" id=4]
+[ext_resource path="res://Resource/Background/bg_layer4.png" type="Texture" id=5]
+[ext_resource path="res://Game/HUD/HUD.gd" type="Script" id=6]
+[ext_resource path="res://Game/Menus/MenuPause.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/HUD/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Menus/MenuPause.gd" type="Script" id=9]
+[ext_resource path="res://Resource/Background/bg_layer1.png" type="Texture" id=10]
+[ext_resource path="res://Game/Objects/Spike.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Game/Levels/level.gd" type="Script" id=12]
 
 [node name="LevelTemporal" type="Node2D"]
+script = ExtResource( 12 )
+level_actual = "res://Game/Levels/LevelTemporal.tscn"
 
 [node name="Plataform" parent="." instance=ExtResource( 1 )]
 position = Vector2( 470, 257 )
@@ -11,3 +23,61 @@ scale = Vector2( 2, 0.3 )
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 2 )]
 position = Vector2( 429, 237 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -600 )
+
+[node name="ParallaxBackground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxBackground"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 10 )
+
+[node name="ParallaxCloudBack" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudBack"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="ParallaxCloudMean" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudMean"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="ParallaxCloudfront" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudfront"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+
+[node name="CapaFront" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CapaFront" instance=ExtResource( 8 )]
+margin_right = 1280.0
+margin_bottom = 720.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 24.0, 181.0 ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="MenuPause" type="Control" parent="CapaFront" instance=ExtResource( 7 )]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+
+[node name="Spike" parent="." instance=ExtResource( 11 )]
+position = Vector2( 591, 242 )

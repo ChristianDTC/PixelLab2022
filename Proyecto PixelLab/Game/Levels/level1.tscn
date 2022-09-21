@@ -25,6 +25,7 @@
 
 [node name="level1" type="Node"]
 script = ExtResource( 17 )
+level_actual = "res://Game/Levels/level1.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( 0, -600 )
