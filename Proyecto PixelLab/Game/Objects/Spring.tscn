@@ -179,5 +179,6 @@ shape = SubResource( 5 )
 [node name="SxfJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -46.091
+bus = "SFX"
 
 [connection signal="body_entered" from="DetectImpulse" to="." method="_on_DetectImpulse_body_entered"]

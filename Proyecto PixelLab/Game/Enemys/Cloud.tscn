@@ -75,5 +75,6 @@ anims/move = SubResource( 2 )
 [node name="shot_bolt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -46.091
+bus = "SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

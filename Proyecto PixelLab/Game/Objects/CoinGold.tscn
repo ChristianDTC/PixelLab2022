@@ -6,3 +6,6 @@
 
 [node name="AnimatedSprite" parent="." index="0"]
 animation = "spin_gold"
+
+[node name="Catch" parent="." index="2"]
+bus = "SFX"
