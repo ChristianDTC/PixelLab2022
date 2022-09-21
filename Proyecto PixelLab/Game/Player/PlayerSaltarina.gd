@@ -81,8 +81,10 @@ func impulse():
 	move.y = impulse
 
 func respawn():
+	DataPlayer.rest_life()
 	animation_player.play("obscure")
-	get_tree().reload_current_scene()
+	if DataPlayer.life >= 1:
+		get_tree().reload_current_scene()
 
 func change_str_jump():
 	reset_power_up_jump.start()

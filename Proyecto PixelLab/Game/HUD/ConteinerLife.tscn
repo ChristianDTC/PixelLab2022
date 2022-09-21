@@ -35,9 +35,8 @@ tracks/0/keys = {
 }
 
 [node name="ConteinerLife" instance=ExtResource( 1 )]
-__meta__ = {
-"_edit_group_": true
-}
+margin_left = 1.0
+margin_right = 129.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 autoplay = "animation_life"

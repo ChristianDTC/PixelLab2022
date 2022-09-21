@@ -3,6 +3,7 @@
 [ext_resource path="res://Game/Objects/CoinBase.tscn" type="PackedScene" id=1]
 
 [node name="CoinSilver" instance=ExtResource( 1 )]
+type_coin = "silver"
 
 [node name="Catch" parent="." index="2"]
 bus = "SFX"
