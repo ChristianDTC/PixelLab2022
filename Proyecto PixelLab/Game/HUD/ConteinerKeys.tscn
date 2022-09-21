@@ -38,15 +38,17 @@ tracks/0/keys = {
 [node name="ConteinerKeys" instance=ExtResource( 1 )]
 margin_right = 121.0
 margin_bottom = 62.0
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="TextureRect" parent="." index="0"]
-margin_left = 64.0
-margin_top = 6.5
-margin_right = 118.0
-margin_bottom = 55.5
-texture = ExtResource( 2 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 autoplay = "animation_key"
 anims/RESET = SubResource( 1 )
 anims/animation_key = SubResource( 2 )
+
+[node name="TextureRect" parent="." index="1"]
+margin_top = -24.5
+margin_right = -3.0
+margin_bottom = 24.5
+texture = ExtResource( 2 )

@@ -35,14 +35,11 @@ tracks/0/keys = {
 }
 
 [node name="ConteinerLife" instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="TextureRect" parent="." index="0"]
-margin_left = 71.0
-margin_top = 3.0
-margin_right = 123.0
-margin_bottom = 74.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 autoplay = "animation_life"
 anims/RESET = SubResource( 1 )
 anims/animation_life = SubResource( 2 )

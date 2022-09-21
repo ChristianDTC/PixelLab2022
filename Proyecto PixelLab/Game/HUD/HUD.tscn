@@ -1,20 +1,51 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/HUD/ConteinerKeys.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/HUD/ConteinerLife.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/HUD/ConteinerCoinsBronze.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/HUD/ConteinerCoinsSilver.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/HUD/ConteinerCoinsGold.tscn" type="PackedScene" id=5]
 
 [node name="HUD" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_horizontal_guides_": [ 24.0, 181.0 ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="ConteinerLife" parent="." instance=ExtResource( 2 )]
-margin_left = 33.0
-margin_top = 28.0
-margin_right = 161.0
-margin_bottom = 107.0
+margin_left = 27.0
+margin_top = 24.0
+margin_right = 155.0
+margin_bottom = 103.0
 
 [node name="ConteinerKeys" parent="." instance=ExtResource( 1 )]
-margin_left = 33.0
-margin_top = 117.0
-margin_right = 161.0
+margin_left = 27.0
+margin_top = 113.0
+margin_right = 155.0
 margin_bottom = 181.0
+
+[node name="ConteinerCoinsGold" parent="." instance=ExtResource( 5 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -132.0
+margin_top = 30.0
+margin_right = -20.0
+margin_bottom = 74.0
+
+[node name="ConteinerCoinsSilver" parent="." instance=ExtResource( 4 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -132.0
+margin_top = 80.0
+margin_right = -20.0
+margin_bottom = 124.0
+
+[node name="ConteinerCoinsBronze" parent="." instance=ExtResource( 3 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -132.0
+margin_top = 132.0
+margin_right = -20.0
+margin_bottom = 176.0
