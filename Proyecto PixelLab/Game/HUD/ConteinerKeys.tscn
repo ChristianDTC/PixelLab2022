@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/HUD/ConteinerInfo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resource/HUD/carrots.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 64, 6.5 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "animation_key"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 64, 6.5 ), Vector2( 64, 0.5 ), Vector2( 64, 6.5 ), Vector2( 64, 12.5 ) ]
+}
+
+[node name="ConteinerKeys" instance=ExtResource( 1 )]
+margin_right = 121.0
+margin_bottom = 62.0
+
+[node name="TextureRect" parent="." index="0"]
+margin_left = 64.0
+margin_top = 6.5
+margin_right = 118.0
+margin_bottom = 55.5
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+autoplay = "animation_key"
+anims/RESET = SubResource( 1 )
+anims/animation_key = SubResource( 2 )

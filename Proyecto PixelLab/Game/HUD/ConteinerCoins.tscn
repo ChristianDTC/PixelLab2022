@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resource/HUD/coin_gold.png" type="Texture" id=1]
+[ext_resource path="res://Game/HUD/ConteinerInfo.tscn" type="PackedScene" id=2]
+
+[node name="ConteinerCoins" instance=ExtResource( 2 )]
+margin_right = 130.0
+margin_bottom = 72.0
+
+[node name="TextureRect" parent="." index="0"]
+margin_left = -65.0
+margin_top = -31.5
+margin_right = -4.0
+margin_bottom = 32.5
+texture = ExtResource( 1 )
