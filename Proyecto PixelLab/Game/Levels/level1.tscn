@@ -62,12 +62,29 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 19 )
 
+[node name="CapaFront" type="CanvasLayer" parent="."]
+
+[node name="MenuPause" type="Control" parent="CapaFront"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="CapaFront/MenuPause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.784314 )
+
+[node name="Panel" type="Panel" parent="CapaFront/MenuPause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -126.0
+margin_top = -181.0
+margin_right = 126.0
+margin_bottom = 181.0
+
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
 position = Vector2( -146, 810 )
-speed = Vector2( 300, 450 )
-str_jump = 3500
-str_bounce = 300
-impulse = -4500
 
 [node name="Plataforms" type="Node" parent="."]
 
