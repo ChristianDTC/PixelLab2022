@@ -12,8 +12,8 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 190, -46.6667, 190, -14, 160, 35, -162, 48, -190, -14, -193.333, -46.6667 )
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -175, -48, 173, -48, 179, -47, 184, -43, 188, -40, 190, -34, 190, -14, 160, 35, -162, 48, -190, -14, -191, -25, -189, -34, -186, -41, -181, -45 )

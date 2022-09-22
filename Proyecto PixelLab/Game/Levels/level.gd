@@ -6,11 +6,15 @@ export var level_actual = ""
 var numbers_carrot_key = 0
 var container_carrots
 
+
+
 func _ready():
+# warning-ignore:return_value_discarded
 	DataPlayer.connect("game_over", self, "game_over")
 	container_carrots = get_node_or_null("Carrots")
 	if container_carrots != null:
 		total_carrot_key_level()
+
 
 func total_carrot_key_level():
 	numbers_carrot_key = container_carrots.get_child_count()
@@ -25,6 +29,8 @@ func carrot_key_rest():
 		var portal = get_node_or_null("Portal")
 		portal.play_animation()
 
+
 func game_over():
 	DataPlayer.level_actual = level_actual
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(menu_game_over)

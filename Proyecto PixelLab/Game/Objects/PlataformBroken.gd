@@ -1,9 +1,10 @@
 extends StaticBody2D
 
 
-func _on_DetectPlayer_body_entered(body):
+func _on_DetectPlayer_body_entered(_body):
 	$DetectPlayer/CollisionShape2D.set_deferred("disabled", true)
 	$AnimationPlayer.play("fall")
+
 
 func diseable():
 	$Collision.set_deferred("disabled", true)
