@@ -195,6 +195,6 @@ position = Vector2( -55, -31 )
 
 [node name="Portal" parent="." instance=ExtResource( 15 )]
 position = Vector2( -459, 712 )
-next_level = "res://Game/Levels/LevelTemporal.tscn"
+next_level = "res://Game/Menus/MenuVictory.tscn"
 
 [connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]

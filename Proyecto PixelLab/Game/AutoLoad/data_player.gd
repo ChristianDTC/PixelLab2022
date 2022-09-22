@@ -9,12 +9,21 @@ var coin_gold = 0
 var coin_silver = 0
 var coin_bronze = 0
 var level_actual = ""
+var total_score = 0
 
 func reset():
 	life = 3
 	coin_gold = 0
 	coin_silver = 0
 	coin_bronze = 0
+	total_score = 0
+
+func score():
+	var value_coin_gold = coin_gold * 10
+	var value_coin_silver = coin_silver * 6
+	var value_coin_bronze = coin_bronze * 3
+	total_score = value_coin_gold + value_coin_silver + value_coin_bronze
+	return total_score
 
 func rest_life():
 	life -= 1
