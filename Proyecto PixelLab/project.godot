@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 DataPlayer="*res://Game/AutoLoad/data_player.gd"
+MusicGobal="*res://Game/AutoLoad/MusicGobal.tscn"
 
 [display]
 
