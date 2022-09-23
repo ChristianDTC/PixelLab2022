@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Proyecto Pixel Lab"
-run/main_scene="res://Game/Levels/Level.1.tscn"
+run/main_scene="res://Game/Menus/MenuPrincipal.tscn"
 config/icon="res://icon.png"
 
 [autoload]

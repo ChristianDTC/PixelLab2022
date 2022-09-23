@@ -175,6 +175,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 12 )
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -800 )
+
+[node name="ParallaxBackground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2048.0
+margin_bottom = 2048.0
+texture = ExtResource( 8 )
+
+[node name="ParallaxCloudBack" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudBack"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+
+[node name="ParallaxCloudMean" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.0980392, 0.556863, 0.0156863, 1 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudMean"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+
+[node name="ParallaxCloudfront" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.223529, 0.882353, 0.0862745, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudfront"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "animation_menu"
 anims/RESET = SubResource( 1 )
@@ -234,46 +277,11 @@ text = "MENU PRINCIPAL"
 stream = ExtResource( 14 )
 volume_db = -46.526
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_base_offset = Vector2( 0, -600 )
-
-[node name="ParallaxBackground" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0, 1 )
-motion_mirroring = Vector2( 2048, 2048 )
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxBackground"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 8 )
-
-[node name="ParallaxCloudBack" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -672 )
-motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 2048, 0 )
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudBack"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 10 )
-
-[node name="ParallaxCloudMean" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -967 )
-motion_scale = Vector2( 0.6, 1 )
-motion_mirroring = Vector2( 2048, 0 )
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudMean"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 9 )
-
-[node name="ParallaxCloudfront" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -876 )
-motion_mirroring = Vector2( 2048, 0 )
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudfront"]
-margin_right = 2048.0
-margin_bottom = 2048.0
-texture = ExtResource( 11 )
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 653, 380 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 
 [connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonExit" to="VBoxContainer/ButtonExit" method="_on_pressed"]

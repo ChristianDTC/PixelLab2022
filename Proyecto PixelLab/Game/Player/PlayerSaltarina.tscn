@@ -35,10 +35,10 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 39.4737
-height = 46.0474
+height = 58.5469
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 38.3333, 7.08334 )
+extents = Vector2( 38.3333, 8.54167 )
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -314,12 +314,12 @@ frames = SubResource( 2 )
 animation = "idle"
 
 [node name="CollisionBody2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -76.6667 )
+position = Vector2( 0, -73.3333 )
 scale = Vector2( 1.26754, 1.06671 )
 shape = SubResource( 1 )
 
 [node name="CollisionFeet2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -3.33333 )
+position = Vector2( 0, -4.79166 )
 shape = SubResource( 3 )
 
 [node name="SfxJump" type="AudioStreamPlayer" parent="."]

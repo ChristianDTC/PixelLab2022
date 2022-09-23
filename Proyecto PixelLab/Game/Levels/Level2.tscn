@@ -1,10 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/Levels/LevelBase.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game/Player/PlayerSaltarina.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/Objects/CarrotKey.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Game/Objects/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Objects/Spike.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Objects/CoinSilver.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/Objects/CoinBronze.tscn" type="PackedScene" id=8]
@@ -30,7 +27,7 @@ position = Vector2( 433, 448 )
 position = Vector2( 326, 448 )
 
 [node name="CoinSilver" parent="Coins" index="2" instance=ExtResource( 7 )]
-position = Vector2( 378, 409 )
+position = Vector2( 378, 396 )
 
 [node name="CoinGold2" parent="Coins" index="3" instance=ExtResource( 9 )]
 position = Vector2( 635, 435 )
@@ -41,12 +38,12 @@ position = Vector2( 528, 435 )
 [node name="CoinSilver2" parent="Coins" index="5" instance=ExtResource( 7 )]
 position = Vector2( 580, 396 )
 
-[node name="CarrotKey" parent="Carrots" index="0" instance=ExtResource( 4 )]
+[node name="CarrotKey" parent="Carrots" index="0"]
 position = Vector2( 710, 428 )
 
-[node name="PlayerSaltarina" parent="." index="8" instance=ExtResource( 2 )]
+[node name="PlayerSaltarina" parent="." index="9"]
 position = Vector2( 270, 471 )
 
-[node name="Portal" parent="." index="9" instance=ExtResource( 5 )]
+[node name="Portal" parent="." index="10"]
 position = Vector2( 791, 387 )
 next_level = "res://Game/Levels/Level3.tscn"

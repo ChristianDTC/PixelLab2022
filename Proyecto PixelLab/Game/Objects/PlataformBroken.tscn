@@ -80,12 +80,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -190, -45.9075, -190, -36.6667, -190, -16.6667, -163.333, 45.9075, 160, 33.3333, 190, -16.6667, 190, -36.6667, 190, -45.9075 )
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 8, 0 )
 texture = ExtResource( 1 )
-
-[node name="Collision" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -190, -45.9075, -190, -36.6667, -190, -16.6667, -163.333, 45.9075, 160, 33.3333, 190, -16.6667, 190, -36.6667, 190, -45.9075 )
 
 [node name="DetectPlayer" type="Area2D" parent="."]
 collision_layer = 0

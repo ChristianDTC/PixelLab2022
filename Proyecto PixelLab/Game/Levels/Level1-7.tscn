@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Plataforms/PlataformLarge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Levels/LevelBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Objects/Spring.tscn" type="PackedScene" id=3]
+
+[node name="Level1-7" instance=ExtResource( 2 )]
+level_actual = "res://Game/Levels/Level1-7.tscn"
+
+[node name="PlataformLarge" parent="Plataforms" index="0" instance=ExtResource( 1 )]
+position = Vector2( 569, 515 )
+
+[node name="Spring" parent="Object" index="0" instance=ExtResource( 3 )]
+position = Vector2( 420, 500 )
+
+[node name="Spring2" parent="Object" index="1" instance=ExtResource( 3 )]
+position = Vector2( 670, 500 )
+
+[node name="CarrotKey" parent="Carrots" index="0"]
+position = Vector2( 420, 269 )
+
+[node name="PlayerSaltarina" parent="." index="9"]
+position = Vector2( 352, 501 )
+
+[node name="Portal" parent="." index="10"]
+position = Vector2( 752, 248 )
+next_level = "res://Game/Levels/Level1-8.tscn"

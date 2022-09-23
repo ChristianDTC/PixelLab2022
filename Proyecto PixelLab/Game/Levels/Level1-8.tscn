@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Objects/PowerUp/PowerUpJump.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Levels/LevelBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Plataforms/PlataformMedium.tscn" type="PackedScene" id=3]
+
+[node name="Level1-8" instance=ExtResource( 2 )]
+level_actual = "res://Game/Levels/Level1-8.tscn"
+
+[node name="PlataformMedium" parent="Plataforms" index="0" instance=ExtResource( 3 )]
+position = Vector2( 144, 538 )
+
+[node name="PlataformMedium2" parent="Plataforms" index="1" instance=ExtResource( 3 )]
+position = Vector2( 511, 447 )
+
+[node name="PowerUpJump" parent="Object" index="0" instance=ExtResource( 1 )]
+position = Vector2( 155, 484 )
+
+[node name="PowerUpJump2" parent="Object" index="1" instance=ExtResource( 1 )]
+position = Vector2( 500, 400 )
+
+[node name="CarrotKey" parent="Carrots" index="0"]
+position = Vector2( 155, 205 )
+
+[node name="PlayerSaltarina" parent="." index="9"]
+position = Vector2( 38, 524 )
+
+[node name="Portal" parent="." index="10"]
+position = Vector2( 617, 120 )
+next_level = "res://Game/Levels/Level1-9.tscn"

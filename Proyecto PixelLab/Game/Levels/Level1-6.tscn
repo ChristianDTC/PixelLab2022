@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Levels/LevelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Plataforms/PlataformLarge.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Objects/Spike.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Plataforms/PlataformMedium.tscn" type="PackedScene" id=4]
+
+[node name="Level1-6" instance=ExtResource( 1 )]
+level_actual = "res://Game/Levels/Level1-6.tscn"
+
+[node name="PlataformLarge" parent="Plataforms" index="0" instance=ExtResource( 2 )]
+position = Vector2( 510, 600 )
+
+[node name="PlataformMedium" parent="Plataforms" index="1" instance=ExtResource( 4 )]
+position = Vector2( 500, 409 )
+
+[node name="Spike" parent="Danger" index="0" instance=ExtResource( 3 )]
+position = Vector2( 415, 423 )
+is_cheat = true
+
+[node name="Spike2" parent="Danger" index="1" instance=ExtResource( 3 )]
+position = Vector2( 500, 420 )
+is_cheat = true
+
+[node name="Spike3" parent="Danger" index="2" instance=ExtResource( 3 )]
+position = Vector2( 587, 420 )
+is_cheat = true
+
+[node name="CarrotKey" parent="Carrots" index="0"]
+position = Vector2( 686, 549 )
+
+[node name="PlayerSaltarina" parent="." index="9"]
+position = Vector2( 243, 585 )
+
+[node name="Portal" parent="." index="10"]
+position = Vector2( 820, 515 )
+next_level = "res://Game/Levels/Level1-7.tscn"
