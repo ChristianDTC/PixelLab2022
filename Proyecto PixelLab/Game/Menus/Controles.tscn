@@ -1,0 +1,272 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Resource/Background/bg_layer2.png" type="Texture" id=1]
+[ext_resource path="res://Resource/Background/bg_layer1.png" type="Texture" id=2]
+[ext_resource path="res://Resource/Background/bg_layer3.png" type="Texture" id=3]
+[ext_resource path="res://Resource/Background/bg_layer4.png" type="Texture" id=4]
+[ext_resource path="res://Resource/Items/teclado blanco.png" type="Texture" id=5]
+[ext_resource path="res://Resource/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Resource/Buttons/ButtonMenu.tres" type="StyleBox" id=7]
+[ext_resource path="res://Game/Menus/Buttons/ButtonMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Menus/Controles.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 81
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 2
+extra_spacing_space = 10
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Resource/Fonts/Kenney Future.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0.713726, 0, 0.94902 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0.611765, 0, 0.509804 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 0.329412 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 6 )
+
+[node name="Controles" type="Control"]
+script = ExtResource( 9 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -800 )
+
+[node name="ParallaxBackground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2048.0
+margin_bottom = 2048.0
+texture = ExtResource( 2 )
+
+[node name="ParallaxCloudBack" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudBack"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+
+[node name="ParallaxCloudMean" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.0980392, 0.556863, 0.0156863, 1 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudMean"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2048.0
+margin_bottom = 2048.0
+texture = ExtResource( 3 )
+
+[node name="ParallaxCloudfront" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.223529, 0.882353, 0.0862745, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudfront"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 77.0
+margin_right = 2048.0
+margin_bottom = 2125.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 495.0
+margin_top = 41.0
+margin_right = 1014.0
+margin_bottom = 133.0
+custom_colors/font_color = Color( 0, 0, 0.941176, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "controles"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 653, 380 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 641.548, 499.45 )
+scale = Vector2( 0.809698, 0.844113 )
+texture = ExtResource( 5 )
+
+[node name="ButtonMenuPrincipal" type="Button" parent="." instance=ExtResource( 8 )]
+margin_left = 516.0
+margin_top = 166.0
+margin_right = 984.0
+margin_bottom = 257.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = ExtResource( 7 )
+text = "menu principal"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color( 1, 0, 0, 0.894118 )
+margin_left = 40.0
+margin_top = 97.0
+margin_right = 300.0
+margin_bottom = 142.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="."]
+modulate = Color( 0.392157, 1, 0, 0.784314 )
+margin_left = 40.0
+margin_top = 142.0
+margin_right = 300.0
+margin_bottom = 187.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="."]
+modulate = Color( 0, 1, 1, 0.784314 )
+margin_left = 40.0
+margin_top = 187.0
+margin_right = 300.0
+margin_bottom = 232.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="."]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 40.0
+margin_top = 232.0
+margin_right = 300.0
+margin_bottom = 277.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+modulate = Color( 1, 0, 0, 0.894118 )
+margin_left = 195.0
+margin_top = 464.0
+margin_right = 244.0
+margin_bottom = 512.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="."]
+modulate = Color( 0.392157, 1, 0, 0.784314 )
+margin_left = 158.0
+margin_top = 516.0
+margin_right = 206.0
+margin_bottom = 564.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="."]
+modulate = Color( 1, 1, 0, 0.784314 )
+margin_left = 72.0
+margin_top = 334.0
+margin_right = 130.0
+margin_bottom = 382.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="."]
+modulate = Color( 1, 1, 0, 0.784314 )
+margin_left = 1171.0
+margin_top = 568.0
+margin_right = 1217.0
+margin_bottom = 668.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="."]
+modulate = Color( 0, 1, 1, 0.784314 )
+margin_left = 259.0
+margin_top = 516.0
+margin_right = 306.0
+margin_bottom = 564.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="."]
+modulate = Color( 0, 1, 1, 0.784314 )
+margin_left = 945.0
+margin_top = 620.0
+margin_right = 992.0
+margin_bottom = 668.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="."]
+modulate = Color( 0.392157, 1, 0, 0.784314 )
+margin_left = 846.0
+margin_top = 619.0
+margin_right = 893.0
+margin_bottom = 669.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="."]
+modulate = Color( 1, 0, 0, 0.894118 )
+margin_left = 895.0
+margin_top = 567.0
+margin_right = 944.0
+margin_bottom = 617.0
+texture = ExtResource( 2 )
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="."]
+modulate = Color( 1, 0, 0, 0.894118 )
+margin_left = 271.0
+margin_top = 620.0
+margin_right = 618.0
+margin_bottom = 670.0
+texture = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 97.0
+margin_right = 228.0
+margin_bottom = 142.0
+custom_colors/font_color = Color( 1, 0.0196078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "saltar"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 142.0
+margin_right = 286.0
+margin_bottom = 187.0
+custom_colors/font_color = Color( 0.0862745, 0.454902, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "izquierda"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 187.0
+margin_right = 260.0
+margin_bottom = 232.0
+custom_colors/font_color = Color( 0, 0.698039, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "derecha"
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 232.0
+margin_right = 228.0
+margin_bottom = 277.0
+custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "pausa"
+
+[connection signal="pressed" from="ButtonMenuPrincipal" to="." method="_on_ButtonMenuPrincipal_pressed"]
