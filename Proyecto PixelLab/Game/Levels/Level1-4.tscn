@@ -28,4 +28,4 @@ position = Vector2( 280, 501 )
 
 [node name="Portal" parent="." index="10"]
 position = Vector2( 687, 420 )
-next_level = "res://Game/Levels/Level1-5.tscn"
+next_level = "res://Game/Levels/Level1-4-1.tscn"

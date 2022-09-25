@@ -1,14 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player/PlayerSaltarina.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resource/Background/bg_layer2.png" type="Texture" id=3]
 [ext_resource path="res://Resource/Background/bg_layer3.png" type="Texture" id=4]
 [ext_resource path="res://Resource/Background/bg_layer4.png" type="Texture" id=5]
-[ext_resource path="res://Game/HUD/HUD.gd" type="Script" id=6]
 [ext_resource path="res://Game/Menus/MenuPause.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/HUD/HUD.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Game/Menus/MenuPause.gd" type="Script" id=9]
 [ext_resource path="res://Resource/Background/bg_layer1.png" type="Texture" id=10]
 [ext_resource path="res://Game/Objects/Spike.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Game/Levels/level.gd" type="Script" id=12]
@@ -19,6 +17,14 @@ level_actual = "res://Game/Levels/LevelTemporal.tscn"
 
 [node name="Plataform" parent="." instance=ExtResource( 1 )]
 position = Vector2( 470, 257 )
+scale = Vector2( 2, 0.3 )
+
+[node name="Plataform2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1591, 1627 )
+scale = Vector2( 2, 0.3 )
+
+[node name="Plataform3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1365, -1416 )
 scale = Vector2( 2, 0.3 )
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 2 )]
@@ -63,21 +69,11 @@ margin_bottom = 40.0
 texture = ExtResource( 5 )
 
 [node name="CapaFront" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="HUD" type="Control" parent="CapaFront" instance=ExtResource( 8 )]
-margin_right = 1280.0
-margin_bottom = 720.0
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 24.0, 181.0 ],
-"_edit_vertical_guides_": [  ]
-}
+[node name="HUD" parent="CapaFront" instance=ExtResource( 8 )]
 
-[node name="MenuPause" type="Control" parent="CapaFront" instance=ExtResource( 7 )]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 9 )
+[node name="MenuPause" parent="CapaFront" instance=ExtResource( 7 )]
 
 [node name="Spike" parent="." instance=ExtResource( 11 )]
 position = Vector2( 591, 242 )

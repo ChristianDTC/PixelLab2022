@@ -132,4 +132,4 @@ func play_enter_portal(position_portal):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "enter_portal":
 		animation_player.play("obscure")
-	
+
