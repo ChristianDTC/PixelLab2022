@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://FlyMan.gd" type="Script" id=1]
+[ext_resource path="res://Game/Enemys/FlyMan.gd" type="Script" id=1]
 [ext_resource path="res://Resource/Enemies/flyMan_fly.png" type="Texture" id=2]
 [ext_resource path="res://Resource/Enemies/flyMan_still_fly.png" type="Texture" id=3]
 
