@@ -1,5 +1,333 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/Levels/LevelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Objects/Spike.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Plataforms/PlataformLarge.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Enemys/SpikeMan.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Objects/PlataformBroken.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Objects/CoinBronze.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Objects/CoinGold.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Objects/CoinSilver.tscn" type="PackedScene" id=9]
 
 [node name="Level6" instance=ExtResource( 1 )]
+level_actual = "res://Game/Levels/Level6.tscn"
+
+[node name="PlataformLarge3" parent="Plataforms" index="0" instance=ExtResource( 3 )]
+position = Vector2( 400, 518 )
+
+[node name="PlataformLarge4" parent="Plataforms" index="1" instance=ExtResource( 3 )]
+position = Vector2( 918, 518 )
+
+[node name="Plataform" parent="Plataforms" index="2" instance=ExtResource( 6 )]
+position = Vector2( 48, 627 )
+
+[node name="Plataform2" parent="Plataforms" index="3" instance=ExtResource( 6 )]
+position = Vector2( 1302, 604 )
+
+[node name="PlataformBroken" parent="Plataforms" index="4" instance=ExtResource( 5 )]
+position = Vector2( 162, 627 )
+
+[node name="PlataformBroken2" parent="Plataforms" index="5" instance=ExtResource( 5 )]
+position = Vector2( 274, 627 )
+
+[node name="PlataformBroken3" parent="Plataforms" index="6" instance=ExtResource( 5 )]
+position = Vector2( 382, 627 )
+
+[node name="PlataformBroken4" parent="Plataforms" index="7" instance=ExtResource( 5 )]
+position = Vector2( 494, 627 )
+
+[node name="PlataformBroken5" parent="Plataforms" index="8" instance=ExtResource( 5 )]
+position = Vector2( 608, 627 )
+
+[node name="PlataformBroken6" parent="Plataforms" index="9" instance=ExtResource( 5 )]
+position = Vector2( 720, 627 )
+
+[node name="PlataformBroken7" parent="Plataforms" index="10" instance=ExtResource( 5 )]
+position = Vector2( 834, 627 )
+
+[node name="PlataformBroken8" parent="Plataforms" index="11" instance=ExtResource( 5 )]
+position = Vector2( 945, 627 )
+
+[node name="PlataformBroken9" parent="Plataforms" index="12" instance=ExtResource( 5 )]
+position = Vector2( 1058, 627 )
+
+[node name="PlataformBroken10" parent="Plataforms" index="13" instance=ExtResource( 5 )]
+position = Vector2( 1170, 627 )
+
+[node name="SpikeMan" parent="Enemys" index="0" instance=ExtResource( 4 )]
+position = Vector2( 740, 504 )
+
+[node name="SpikeMan2" parent="Enemys" index="1" instance=ExtResource( 4 )]
+position = Vector2( 944, 504 )
+
+[node name="Spike" parent="Danger" index="0" instance=ExtResource( 2 )]
+position = Vector2( 133, 513 )
+is_cheat = true
+
+[node name="Spike43" parent="Danger" index="1" instance=ExtResource( 2 )]
+position = Vector2( 325, 504 )
+
+[node name="Spike44" parent="Danger" index="2" instance=ExtResource( 2 )]
+position = Vector2( 416, 503 )
+
+[node name="Spike46" parent="Danger" index="3" instance=ExtResource( 2 )]
+position = Vector2( 222, 504 )
+
+[node name="Spike45" parent="Danger" index="4" instance=ExtResource( 2 )]
+position = Vector2( 500, 503 )
+
+[node name="Spike40" parent="Danger" index="5" instance=ExtResource( 2 )]
+position = Vector2( 133, 504 )
+
+[node name="Spike41" parent="Danger" index="6" instance=ExtResource( 2 )]
+position = Vector2( 162, 504 )
+
+[node name="Spike42" parent="Danger" index="7" instance=ExtResource( 2 )]
+position = Vector2( 191, 504 )
+
+[node name="Spike2" parent="Danger" index="8" instance=ExtResource( 2 )]
+position = Vector2( 162, 527 )
+is_cheat = true
+
+[node name="Spike3" parent="Danger" index="9" instance=ExtResource( 2 )]
+position = Vector2( 191, 528 )
+is_cheat = true
+
+[node name="Spike4" parent="Danger" index="10" instance=ExtResource( 2 )]
+position = Vector2( 218, 528 )
+is_cheat = true
+
+[node name="Spike5" parent="Danger" index="11" instance=ExtResource( 2 )]
+position = Vector2( 244, 528 )
+is_cheat = true
+
+[node name="Spike6" parent="Danger" index="12" instance=ExtResource( 2 )]
+position = Vector2( 271, 528 )
+is_cheat = true
+
+[node name="Spike7" parent="Danger" index="13" instance=ExtResource( 2 )]
+position = Vector2( 298, 528 )
+is_cheat = true
+
+[node name="Spike8" parent="Danger" index="14" instance=ExtResource( 2 )]
+position = Vector2( 325, 528 )
+is_cheat = true
+
+[node name="Spike9" parent="Danger" index="15" instance=ExtResource( 2 )]
+position = Vector2( 352, 528 )
+is_cheat = true
+
+[node name="Spike10" parent="Danger" index="16" instance=ExtResource( 2 )]
+position = Vector2( 378, 528 )
+is_cheat = true
+
+[node name="Spike11" parent="Danger" index="17" instance=ExtResource( 2 )]
+position = Vector2( 404, 528 )
+is_cheat = true
+
+[node name="Spike12" parent="Danger" index="18" instance=ExtResource( 2 )]
+position = Vector2( 430, 528 )
+is_cheat = true
+
+[node name="Spike13" parent="Danger" index="19" instance=ExtResource( 2 )]
+position = Vector2( 456, 528 )
+is_cheat = true
+
+[node name="Spike14" parent="Danger" index="20" instance=ExtResource( 2 )]
+position = Vector2( 482, 527 )
+is_cheat = true
+
+[node name="Spike15" parent="Danger" index="21" instance=ExtResource( 2 )]
+position = Vector2( 508, 527 )
+is_cheat = true
+
+[node name="Spike16" parent="Danger" index="22" instance=ExtResource( 2 )]
+position = Vector2( 534, 527 )
+is_cheat = true
+
+[node name="Spike17" parent="Danger" index="23" instance=ExtResource( 2 )]
+position = Vector2( 560, 527 )
+is_cheat = true
+
+[node name="Spike18" parent="Danger" index="24" instance=ExtResource( 2 )]
+position = Vector2( 586, 527 )
+is_cheat = true
+
+[node name="Spike19" parent="Danger" index="25" instance=ExtResource( 2 )]
+position = Vector2( 612, 527 )
+is_cheat = true
+
+[node name="Spike22" parent="Danger" index="26" instance=ExtResource( 2 )]
+position = Vector2( 698, 528 )
+is_cheat = true
+
+[node name="Spike23" parent="Danger" index="27" instance=ExtResource( 2 )]
+position = Vector2( 727, 529 )
+is_cheat = true
+
+[node name="Spike24" parent="Danger" index="28" instance=ExtResource( 2 )]
+position = Vector2( 754, 529 )
+is_cheat = true
+
+[node name="Spike25" parent="Danger" index="29" instance=ExtResource( 2 )]
+position = Vector2( 780, 529 )
+is_cheat = true
+
+[node name="Spike26" parent="Danger" index="30" instance=ExtResource( 2 )]
+position = Vector2( 807, 529 )
+is_cheat = true
+
+[node name="Spike27" parent="Danger" index="31" instance=ExtResource( 2 )]
+position = Vector2( 834, 529 )
+is_cheat = true
+
+[node name="Spike28" parent="Danger" index="32" instance=ExtResource( 2 )]
+position = Vector2( 861, 529 )
+is_cheat = true
+
+[node name="Spike29" parent="Danger" index="33" instance=ExtResource( 2 )]
+position = Vector2( 888, 529 )
+is_cheat = true
+
+[node name="Spike30" parent="Danger" index="34" instance=ExtResource( 2 )]
+position = Vector2( 914, 529 )
+is_cheat = true
+
+[node name="Spike31" parent="Danger" index="35" instance=ExtResource( 2 )]
+position = Vector2( 940, 529 )
+is_cheat = true
+
+[node name="Spike32" parent="Danger" index="36" instance=ExtResource( 2 )]
+position = Vector2( 966, 529 )
+is_cheat = true
+
+[node name="Spike33" parent="Danger" index="37" instance=ExtResource( 2 )]
+position = Vector2( 992, 529 )
+is_cheat = true
+
+[node name="Spike34" parent="Danger" index="38" instance=ExtResource( 2 )]
+position = Vector2( 1018, 528 )
+is_cheat = true
+
+[node name="Spike35" parent="Danger" index="39" instance=ExtResource( 2 )]
+position = Vector2( 1044, 528 )
+is_cheat = true
+
+[node name="Spike36" parent="Danger" index="40" instance=ExtResource( 2 )]
+position = Vector2( 1070, 528 )
+is_cheat = true
+
+[node name="Spike37" parent="Danger" index="41" instance=ExtResource( 2 )]
+position = Vector2( 1096, 528 )
+is_cheat = true
+
+[node name="Spike38" parent="Danger" index="42" instance=ExtResource( 2 )]
+position = Vector2( 1122, 528 )
+is_cheat = true
+
+[node name="Spike39" parent="Danger" index="43" instance=ExtResource( 2 )]
+position = Vector2( 1148, 528 )
+is_cheat = true
+
+[node name="Spike20" parent="Danger" index="44" instance=ExtResource( 2 )]
+position = Vector2( 637, 523 )
+is_cheat = true
+
+[node name="Spike21" parent="Danger" index="45" instance=ExtResource( 2 )]
+position = Vector2( 665, 513 )
+is_cheat = true
+
+[node name="CoinGold" parent="Coins" index="0" instance=ExtResource( 8 )]
+position = Vector2( 169, 589 )
+
+[node name="CoinGold2" parent="Coins" index="1" instance=ExtResource( 8 )]
+position = Vector2( 276, 590 )
+
+[node name="CoinGold3" parent="Coins" index="2" instance=ExtResource( 8 )]
+position = Vector2( 390, 590 )
+
+[node name="CoinGold4" parent="Coins" index="3" instance=ExtResource( 8 )]
+position = Vector2( 496, 590 )
+
+[node name="CoinGold5" parent="Coins" index="4" instance=ExtResource( 8 )]
+position = Vector2( 608, 590 )
+
+[node name="CoinGold6" parent="Coins" index="5" instance=ExtResource( 8 )]
+position = Vector2( 720, 589 )
+
+[node name="CoinGold7" parent="Coins" index="6" instance=ExtResource( 8 )]
+position = Vector2( 834, 590 )
+
+[node name="CoinGold8" parent="Coins" index="7" instance=ExtResource( 8 )]
+position = Vector2( 936, 589 )
+
+[node name="CoinGold9" parent="Coins" index="8" instance=ExtResource( 8 )]
+position = Vector2( 1058, 589 )
+
+[node name="CoinGold10" parent="Coins" index="9" instance=ExtResource( 8 )]
+position = Vector2( 1152, 590 )
+
+[node name="CoinGold11" parent="Coins" index="10" instance=ExtResource( 8 )]
+position = Vector2( 462, 485 )
+
+[node name="CoinGold12" parent="Coins" index="11" instance=ExtResource( 8 )]
+position = Vector2( 366, 485 )
+
+[node name="CoinGold13" parent="Coins" index="12" instance=ExtResource( 8 )]
+position = Vector2( 276, 485 )
+
+[node name="CoinBronze" parent="Coins" index="13" instance=ExtResource( 7 )]
+position = Vector2( 1124, 484 )
+
+[node name="CoinBronze2" parent="Coins" index="14" instance=ExtResource( 7 )]
+position = Vector2( 1086, 484 )
+
+[node name="CoinBronze3" parent="Coins" index="15" instance=ExtResource( 7 )]
+position = Vector2( 1105, 458 )
+
+[node name="CoinBronze4" parent="Coins" index="16" instance=ExtResource( 7 )]
+position = Vector2( 867, 484 )
+
+[node name="CoinBronze5" parent="Coins" index="17" instance=ExtResource( 7 )]
+position = Vector2( 829, 484 )
+
+[node name="CoinBronze6" parent="Coins" index="18" instance=ExtResource( 7 )]
+position = Vector2( 848, 458 )
+
+[node name="CoinBronze7" parent="Coins" index="19" instance=ExtResource( 7 )]
+position = Vector2( 661, 484 )
+
+[node name="CoinBronze8" parent="Coins" index="20" instance=ExtResource( 7 )]
+position = Vector2( 623, 484 )
+
+[node name="CoinBronze9" parent="Coins" index="21" instance=ExtResource( 7 )]
+position = Vector2( 642, 458 )
+
+[node name="CoinSilver" parent="Coins" index="22" instance=ExtResource( 9 )]
+position = Vector2( 1261, 567 )
+
+[node name="CoinSilver2" parent="Coins" index="23" instance=ExtResource( 9 )]
+position = Vector2( 1300, 567 )
+
+[node name="CoinSilver4" parent="Coins" index="24" instance=ExtResource( 9 )]
+position = Vector2( 1280, 541 )
+
+[node name="CoinSilver5" parent="Coins" index="25" instance=ExtResource( 9 )]
+position = Vector2( 1315, 541 )
+
+[node name="CoinSilver6" parent="Coins" index="26" instance=ExtResource( 9 )]
+position = Vector2( 1300, 513 )
+
+[node name="CoinSilver3" parent="Coins" index="27" instance=ExtResource( 9 )]
+position = Vector2( 1336, 567 )
+
+[node name="CarrotKey" parent="Carrots" index="0"]
+position = Vector2( 325, 420 )
+
+[node name="PlayerSaltarina" parent="." index="9"]
+position = Vector2( 18, 611 )
+
+[node name="Portal" parent="." index="10"]
+position = Vector2( 858, 376 )
+next_level = "res://Game/Levels/Level7.tscn"

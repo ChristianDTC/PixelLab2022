@@ -301,6 +301,7 @@ texture = ExtResource( 9 )
 offset = Vector2( 40, -13.3333 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 663.333, -270 )
 current = true
 limit_bottom = 1000
 drag_margin_h_enabled = true

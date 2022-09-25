@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Levels/LevelBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Enemys/WindMan.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Plataforms/PlataformLarge.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Plataforms/Plataform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Objects/CarrotKey.tscn" type="PackedScene" id=5]
 
 [node name="Level1-5" instance=ExtResource( 1 )]
 level_actual = "res://Game/Levels/Level1-5.tscn"
@@ -12,7 +13,7 @@ level_actual = "res://Game/Levels/Level1-5.tscn"
 position = Vector2( 482, 549 )
 
 [node name="Plataform" parent="Plataforms" index="1" instance=ExtResource( 4 )]
-position = Vector2( 238, 476 )
+position = Vector2( 229, 439 )
 
 [node name="WindMan" parent="Enemys" index="0" instance=ExtResource( 2 )]
 position = Vector2( 395, 430 )
@@ -20,8 +21,11 @@ position = Vector2( 395, 430 )
 [node name="CarrotKey" parent="Carrots" index="0"]
 position = Vector2( 395, 300 )
 
+[node name="CarrotKey2" parent="Carrots" index="1" instance=ExtResource( 5 )]
+position = Vector2( 395, 349 )
+
 [node name="PlayerSaltarina" parent="." index="9"]
-position = Vector2( 238, 462 )
+position = Vector2( 211, 422 )
 
 [node name="Portal" parent="." index="10"]
 position = Vector2( 658, 490 )

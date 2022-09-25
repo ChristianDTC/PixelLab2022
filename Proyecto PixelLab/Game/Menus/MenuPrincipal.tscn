@@ -191,7 +191,9 @@ anchor_bottom = 1.0
 script = ExtResource( 12 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_base_offset = Vector2( 0, -800 )
+scale = Vector2( 0.6, 0.6 )
+transform = Transform2D( 0.6, 0, 0, 0.6, 0, 0 )
+scroll_base_offset = Vector2( 0, -400 )
 
 [node name="ParallaxBackground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
@@ -231,6 +233,8 @@ motion_mirroring = Vector2( 2048, 0 )
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxCloudfront"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 2048.0
+margin_bottom = 2048.0
 texture = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -302,7 +306,7 @@ stream = ExtResource( 14 )
 volume_db = -46.526
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 653, 380 )
+position = Vector2( 653, 358 )
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true

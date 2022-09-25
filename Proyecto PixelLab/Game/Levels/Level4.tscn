@@ -68,14 +68,14 @@ position = Vector2( 386, 440 )
 [node name="Spike2" parent="Danger" index="1" instance=ExtResource( 7 )]
 position = Vector2( 207, 277 )
 
-[node name="Spring" parent="Object" index="0" instance=ExtResource( 9 )]
-position = Vector2( 71, 480 )
-
-[node name="Spring2" parent="Object" index="1" instance=ExtResource( 9 )]
-position = Vector2( 561, 372 )
-
-[node name="PowerUpFly" parent="Object" index="2" instance=ExtResource( 11 )]
+[node name="PowerUpFly" parent="Object" index="0" instance=ExtResource( 11 )]
 position = Vector2( 1330, 152 )
+
+[node name="Spring" parent="Object" index="1" instance=ExtResource( 9 )]
+position = Vector2( 72, 478 )
+
+[node name="Spring2" parent="Object" index="2" instance=ExtResource( 9 )]
+position = Vector2( 561, 373 )
 
 [node name="CoinGold" parent="Coins" index="0" instance=ExtResource( 12 )]
 position = Vector2( -114, 529 )
@@ -112,4 +112,4 @@ position = Vector2( 189, 439 )
 
 [node name="Portal" parent="." index="10"]
 position = Vector2( 1641, -209 )
-next_level = "res://Game/Menus/MenuVictory.tscn"
+next_level = "res://Game/Levels/Level5.tscn"

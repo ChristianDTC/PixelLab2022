@@ -72,129 +72,127 @@ texture = ExtResource( 19 )
 [node name="MenuPause" parent="CapaFront" instance=ExtResource( 21 )]
 
 [node name="PlayerSaltarina" parent="." instance=ExtResource( 1 )]
-position = Vector2( -146, 810 )
+position = Vector2( 276, 1247 )
 
 [node name="Plataforms" type="Node" parent="."]
 
 [node name="Plataform" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 562, 445 )
+position = Vector2( 984, 896 )
 
 [node name="Plataform10" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 1198, 807 )
+position = Vector2( 1620, 1258 )
 rotation = 0.00802079
 
 [node name="Plataform11" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 538, 814 )
+position = Vector2( 960, 1265 )
 rotation = 0.00802079
 
 [node name="Plataform9" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 492, 445 )
+position = Vector2( 914, 896 )
 
 [node name="Plataform5" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 721, 445 )
+position = Vector2( 1143, 896 )
 
 [node name="Plataform6" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 836, 445 )
+position = Vector2( 1258, 896 )
 
 [node name="Plataform7" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 1063, 534 )
+position = Vector2( 1485, 985 )
 
 [node name="Plataform12" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 1278, 628 )
+position = Vector2( 1700, 1079 )
 
 [node name="Plataform8" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 1335, 712 )
+position = Vector2( 1757, 1163 )
 
 [node name="Plataform2" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 37, 735 )
+position = Vector2( 459, 1186 )
 
 [node name="Plataform14" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( -128, 826 )
+position = Vector2( 294, 1277 )
 
 [node name="Plataform3" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 270, 571 )
+position = Vector2( 692, 1022 )
 
 [node name="Plataform13" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 158, 653 )
+position = Vector2( 580, 1104 )
 
 [node name="Plataform4" parent="Plataforms" instance=ExtResource( 2 )]
-position = Vector2( 820, 841 )
+position = Vector2( 1242, 1292 )
 scale = Vector2( 5.38153, 0.463525 )
 
 [node name="PlataformBroken" parent="Plataforms" instance=ExtResource( 14 )]
-position = Vector2( -326, 796 )
+position = Vector2( 96, 1247 )
 
 [node name="Enemys" type="Node" parent="."]
 
 [node name="SpikeMan" parent="Enemys" instance=ExtResource( 5 )]
-position = Vector2( 779, 818 )
+position = Vector2( 1201, 1269 )
 
 [node name="SpikeMan2" parent="Enemys" instance=ExtResource( 5 )]
-position = Vector2( 292, 818 )
+position = Vector2( 714, 1269 )
 
 [node name="Cloud" parent="Enemys" instance=ExtResource( 7 )]
-position = Vector2( 135, 153 )
+position = Vector2( 557, 604 )
 
 [node name="Cloud2" parent="Enemys" instance=ExtResource( 7 )]
-position = Vector2( 1187, 244 )
+position = Vector2( 1609, 695 )
 
 [node name="WindMan" parent="Enemys" instance=ExtResource( 6 )]
-position = Vector2( 376, 509 )
+position = Vector2( 798, 960 )
 
 [node name="WindMan2" parent="Enemys" instance=ExtResource( 6 )]
-position = Vector2( 948, 484 )
+position = Vector2( 1370, 935 )
 
 [node name="WindMan3" parent="Enemys" instance=ExtResource( 6 )]
-position = Vector2( 1181, 571 )
+position = Vector2( 1603, 1022 )
 
 [node name="Danger" type="Node" parent="."]
 
 [node name="Spike" parent="Danger" instance=ExtResource( 4 )]
-position = Vector2( 744, 432 )
+position = Vector2( 1166, 883 )
 
 [node name="Spike2" parent="Danger" instance=ExtResource( 4 )]
-position = Vector2( 1123, 821 )
+position = Vector2( 1545, 1272 )
 
 [node name="Spike3" parent="Danger" instance=ExtResource( 4 )]
-position = Vector2( 135, 667 )
+position = Vector2( 557, 1118 )
 is_cheat = true
 
 [node name="Object" type="Node" parent="."]
 
 [node name="Spring" parent="Object" instance=ExtResource( 11 )]
-position = Vector2( 215, 818 )
+position = Vector2( 637, 1269 )
 
 [node name="PowerUpJump" parent="Object" instance=ExtResource( 12 )]
-position = Vector2( 37, 585 )
+position = Vector2( 459, 1036 )
 
 [node name="PowerUpFly" parent="Object" instance=ExtResource( 13 )]
-position = Vector2( -315, 915 )
+position = Vector2( 107, 1366 )
 
 [node name="Coins" type="Node2D" parent="Object"]
 position = Vector2( 390, 14 )
 
 [node name="CoinBronze" parent="Object/Coins" instance=ExtResource( 8 )]
-position = Vector2( -390, 387 )
+position = Vector2( 32, 838 )
 
 [node name="CoinGold" parent="Object/Coins" instance=ExtResource( 10 )]
-position = Vector2( -350, 341 )
+position = Vector2( 72, 792 )
 
 [node name="CoinSilver" parent="Object/Coins" instance=ExtResource( 9 )]
-position = Vector2( -314, 387 )
+position = Vector2( 108, 838 )
 
 [node name="Carrots" type="Node" parent="."]
 
 [node name="CarrotKey" parent="Carrots" instance=ExtResource( 16 )]
-position = Vector2( -84, 781 )
+position = Vector2( 338, 1232 )
 
 [node name="CarrotKey2" parent="Carrots" instance=ExtResource( 16 )]
-position = Vector2( -326, 751 )
+position = Vector2( 96, 1202 )
 
 [node name="Bolts" type="Node2D" parent="."]
-position = Vector2( -55, -31 )
+position = Vector2( 367, 420 )
 
 [node name="Portal" parent="." instance=ExtResource( 15 )]
-position = Vector2( -459, 712 )
+position = Vector2( -37, 1149 )
 next_level = "res://Game/Menus/MenuVictory.tscn"
-
-[connection signal="ready" from="." to="PlayerSaltarina" method="_on_level1_ready"]

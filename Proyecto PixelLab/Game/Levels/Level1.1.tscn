@@ -20,7 +20,7 @@ position = Vector2( 466, 383 )
 position = Vector2( 528, 445 )
 
 [node name="PlayerSaltarina" parent="." index="9"]
-position = Vector2( 272, 464 )
+position = Vector2( 282, 435 )
 
 [node name="Portal" parent="." index="10"]
 position = Vector2( 728, 420 )
